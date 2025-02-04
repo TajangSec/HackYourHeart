@@ -1,0 +1,23 @@
+.about-list{
+    margin: 0 auto;
+    width: 70%;
+    padding: 1rem;
+    // background-color: #23334A;
+    border-radius: $big-radius;
+    
+}
+figure{
+    img{
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+}
+// 视频块大小
+.video-wrapper{
+    iframe{
+        height: 320px;
+        width: 569px;
+    }
+}

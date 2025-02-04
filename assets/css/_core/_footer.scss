@@ -1,0 +1,40 @@
+footer{
+    font-size: 1rem;
+    height: $footer-height;
+    background-color: $footer-background-color;
+    color: $footer-text-color;
+    line-height: 1.8rem;
+    a{
+        text-decoration: none;
+        color: $header-hover-color;
+    }
+    // 控制页脚在底部，需要main-content是relative，并且有padding-bottom为页脚高度
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+.footer-column{
+    display: flex;
+    flex-direction: column;
+    .site-info{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; /* 均匀分布 */
+    }
+}
+.busuanzi,.site-age{
+    text-align: center;
+}
+.site-info2{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    // justify-content: space-between; /* 均匀分布 */
+    div{
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,14 @@
+<ul class="social-links">
+    {{ range $key, $value := .Site.Params.social }}
+      {{ $icon := resources.Get $value.icon }}
+      {{ if $icon }}
+        <li>
+          <a href="{{ $value.url }}" target="_blank" rel="noopener noreferrer">
+            {{ $icon.Content | safeHTML }}
+          </a>
+        </li>
+      {{ else }}
+        {{ warnf "Failed to load SVG icon: %s" $value.icon }}
+      {{ end }}
+    {{ end }}
+  </ul>

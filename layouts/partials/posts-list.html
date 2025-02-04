@@ -1,0 +1,90 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.btn-group button');
+        const postCards = document.querySelectorAll('.fcard');
+      
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            const filter = this.getAttribute('data-filter'); // 获取当前分类
+      
+            // 遍历所有文章卡片
+            postCards.forEach(card => {
+              const category = card.getAttribute('data-category'); // 获取文章的分类
+      
+              // 如果分类匹配或选择“全部”，则显示文章，否则隐藏
+              if (filter === 'all' || category === filter) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+      
+            // 更新按钮的激活状态
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
+      });
+</script>
+<div class="row posts-list">
+
+  {{ $pages := where .Site.RegularPages "Type" "!=" "page" }} <!-- 过滤掉 archives.md friends.md about.md  -->
+    {{- range $pages -}}
+    <div class="col-xl-4 col-md-6 fcard" data-category="{{ .Params.categories | urlize }}" data-tags="{{ delimit (apply .Params.tags "urlize" ".") " " }}">
+        <div class="card">
+          {{/*  文章封面  */}}
+          <div class="card-cover">
+            <a href="{{ .RelPermalink }}">
+            {{ $cover := .Params.cover | default "../../default-image.png" }}
+            <img src="{{ $cover }}" alt="Cover Image" class="card-img-top img-fluid">
+          </a>
+          </div>
+          {{/*  文字区  */}}
+          <div class="card-text">
+            {{- $content := .Content -}} <!-- 获取文章内容 -->
+            {{- $wordCount := countwords $content -}} <!-- 计算字数 -->
+            {{- $readingSpeed := .Site.Params.readingSpeed | default 200 -}} <!-- 获取阅读速度 -->
+            {{- $readingTime := div $wordCount $readingSpeed | math.Ceil -}} <!-- 计算阅读时间 -->
+
+            <div class="card-cate-time">
+                {{- if lt $readingTime 1 -}}
+                
+                    {{- with .Params.categories -}} <!-- 检查是否有分类 -->
+                        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | 1分钟内</span>
+                    {{- else -}}
+                        暂无分类<span> | 1分钟内</span>
+                    {{- end -}}
+                {{- else -}}
+                    {{- with .Params.categories -}} <!-- 检查是否有分类 -->
+                        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | {{$readingTime}}分钟</span>
+                    {{- else -}}
+                        暂无分类<span> | {{$readingTime}}分钟</span>
+                    {{- end -}}
+                {{- end -}}
+            </div>
+            <p class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+            <p class="card-time">{{ .Date.Format "Jan 02，2006" }}</p>
+
+            {{/*  随机tags颜色，但是同一种标签颜色相同  */}}
+            <div class="tags">
+              {{ $classList := slice "badge-soft-dark" "badge-soft-primary" "badge-soft-success" "badge-soft-purple" "badge-soft-warning" "badge-soft-danger" }}
+              {{ range .Params.tags }}
+                {{ $tag := . }}
+                {{ $hash := sha1 $tag }}
+                 <!-- 将哈希值的前 8 个字符转换为整数 -->
+                {{ $hashPrefix := substr $hash 0 8 }}
+                {{ $hashInt := int (printf "0x%s" $hashPrefix) }}
+                <!-- 计算索引 -->
+                {{ $index := mod $hashInt (len $classList) }}
+                <!-- 根据索引选择 class -->
+                {{ $class := index $classList $index }}
+                <!-- 渲染标签 -->
+                <span class="badge mr-1 font-size-13 {{ $class }}">{{ $tag }}</span>
+              {{ end }}
+            </div>
+          </div>
+
+        </div>
+    </div>
+    {{- end -}}
+</div>

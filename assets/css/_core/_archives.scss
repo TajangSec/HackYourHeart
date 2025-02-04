@@ -1,0 +1,27 @@
+// .main-content.archives{
+
+// }
+.archives-list{
+    margin: 0 auto;
+    width: 70%;
+    background-color: #23334A;
+    border-radius: $big-radius;
+}
+.archives-time{
+    margin-left: auto
+}
+.archives-content{
+    list-style: none; /* 去掉项目符号 */
+    padding: 0.5rem 1rem;
+    a{
+        display: flex;
+        text-decoration: none;
+        color: #b0bbd4;
+        &:hover{
+            color: $header-hover-color;
+        }
+    }
+    ul{
+        list-style: none; /* 去掉项目符号 */
+    }
+}

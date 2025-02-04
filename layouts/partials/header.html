@@ -1,0 +1,76 @@
+<header>
+  <div class="header-content-width">
+{{ $styles := resources.Get "lib/bootstrap/bootstrap.min.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+    {{ $js := resources.Get "lib/bootstrap/bootstrap.bundle.min.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ $js := resources.Get "lib/bootstrap/popper.min.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ $js := resources.Get "lib/search/fuse.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+    
+    <div class="navbar-header navbar-expand-lg">
+      <div style="width:100%">
+          <div class="d-flex align-items-center justify-content-between px-5 pt-6 leading-none sm:px-10">
+              <div class="d-flex align-items-center w-100" >
+                {{/*  导航栏logo  */}}
+                  <div class="navbar-brand-box">
+                      <a href="/" class="logo">
+                          <span class="logo-lg" >
+                              <img src="../../header-logo.svg" alt="" height="36">
+                          </span>
+                      </a>
+                  </div>
+
+    <!-- 汉堡菜单按钮 -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">☰</span>
+    </button>
+                  
+                  {{/*  菜单  */}}
+                  <div class="collapse navbar-collapse nav-menu" id="navbarNav">
+                    <ul class="nav-bar nav">
+                      {{ range .Site.Menus.main }}
+                      <li class="nav-item">
+                              <a href="{{ .URL }}" class="{{ if eq $.RelPermalink .URL }}active{{ end }}" title="{{ .Name }}">{{ .Name }}</a>
+                              {{ if .HasChildren }}
+                                  <ul>
+                                      {{ range .Children }}
+                                      <li class="nav-item">
+                                              <a href="{{ .URL }}" class="nav-link {{ if eq $.RelPermalink .URL }}active{{ end }}" aria-current="page" title="{{ .Name }}">{{ .Name }}</a>
+                                          </li>
+                                      {{ end }}
+                                  </ul>
+                              {{ end }}
+                          </li>
+                      {{ end }}
+                  </ul>
+
+                   </div>
+                  {{/*  搜索栏  */}}
+                  <div class="d-flex align-items-center ms-auto" id="search-bar">
+                    <div class="input-group global-search">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <svg t="1736823180085" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4262" ><path d="M998.436571 878.372571l-244.809142-245.065142c-2.852571-2.852571-5.997714-5.010286-8.996572-7.350858a403.163429 403.163429 0 0 0 65.499429-220.672c0-223.890286-181.321143-405.321143-405.101715-405.321142C181.394286-0.036571-0.036571 181.394286-0.036571 405.284571c0 223.926857 181.430857 405.321143 405.065142 405.321143 81.408 0 157.110857-24.210286 220.672-65.609143 2.340571 3.072 4.461714 6.144 7.241143 8.96l244.882286 245.065143a85.065143 85.065143 0 0 0 120.576 0.036572c33.28-33.353143 33.28-87.369143 0.036571-120.685715m-593.408-195.766857c-152.758857 0-277.138286-124.416-277.138285-277.321143 0-152.868571 124.379429-277.321143 277.138285-277.321142 152.795429 0 277.174857 124.452571 277.174858 277.321142 0 152.905143-124.379429 277.321143-277.174858 277.321143" fill="#566073" p-id="4263"></path></svg>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control white-cursor" placeholder="Search Blog" id="fastSearch" tabindex="0">
+                        <ul id="search-results" class="list-group mt-3"></ul>
+                    </div>
+                  </div>
+          </div>
+      </div>
+  </div>
+  {{ $js := resources.Get "lib/search/search.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+  </div>
+  </header>

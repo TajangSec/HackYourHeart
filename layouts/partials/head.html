@@ -1,0 +1,11 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+
+{{/*  这里写博客作者，主题配作者，meta、资源link、SEO相关  */}}
+{{- partial "head/meta.html" . -}}
+{{/*  link.html中引入了style.scss，此head又存在于baseof.html，所以所有页面都有共同样式表。  */}}
+{{- partial "head/link.html" . -}}
+{{- partial "head/seo.html" . -}}
+

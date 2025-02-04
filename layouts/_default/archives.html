@@ -1,0 +1,43 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/*  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}  */}}
+
+  {{/*  首页主体  */}}
+<div class="home">
+  <div class="d-flex px-5 pt-6 leading-none sm:px-10" id="layout-wrapper">
+      {{/*  左侧垂直菜单  */}}
+        {{ partial "vertical-menu/vertical-menu.html" . }}
+        {{/*  文章区  */}}
+    <div class="main-content" style="width: 100%;">
+          
+            <h1>Archives</h1>
+      <div class="archives-list">
+          {{ $pages := where .Site.RegularPages "Type" "!=" "page" }} <!-- 过滤掉 archives.md -->
+          {{ range $pages.GroupByDate "2006" }}
+          <div class="archives-content">
+          <h2>{{ .Key }}</h2>
+          <ul>
+              {{ range .Pages }}
+              <li>
+                  <a href="{{ .Permalink }}"><span class="archives-title">{{ .Title }}</span><span class="archives-time"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time></span>
+                  </a>
+              </li>
+              {{ end }}
+          </ul>
+          </div>
+          {{ end }}
+      </div>
+      <footer>
+        {{ partial "footer.html" . }}
+      </footer>
+    </div>
+  </div>
+</div>
+{{ end }}

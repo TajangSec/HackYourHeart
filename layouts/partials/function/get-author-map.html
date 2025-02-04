@@ -1,0 +1,55 @@
+{{- /* 
+  获取map格式的作者信息
+  @param {String|Map} . the author name or map
+  @returns {Map}
+  @example {{- $author := partial "function/get-author-map.html" .Params.author -}}
+*/ -}}
+
+{{/*  判断从站点配置中获取的值是否为map  */}}
+{{- if not (reflect.IsMap site.Params.author) -}}
+  {{- errorf "HackTheBox params error: site.Params.author must be a map, got %T." site.Params.author -}}
+{{- end -}}
+
+
+
+{{/*========== 初始化作者信息 ==========*/}}
+
+{{/*  定义作者信息map的默认值  */}}
+{{- $default := dict "name" "" "link" "" "email" "" "avatar" "" -}}
+{{/*  将默认值与作者信息合并，作者信息会覆盖默认信息，作者信息中有空缺条目，则取默认值  */}}
+{{- $author := site.Params.author | merge $default -}}
+{{/*  定义作者信息字典，若传入类型是map，则设置为$authorParams，否则取name字段为$authorParams  */}}
+{{- $authorParam := dict -}}
+{{- if reflect.IsMap . -}}
+  {{- $authorParam = . -}}
+{{- else -}}
+  {{- with . -}}
+    {{- $authorParam = dict "name" . -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*  精细设置各个字段  */}}
+{{- if isset $authorParam "name" | and (ne $authorParam.name site.Params.author.name) -}}
+  {{- $author = $authorParam | merge $default | merge $author -}}
+{{- else -}}
+{{/*  将$authorParams里各项数据更新到$author里  */}}
+  {{- with $authorParam.link -}}{{ $author = dict "link" . | merge $author }}{{- end -}}
+  {{- with $authorParam.email -}}{{ $author = dict "email" . | merge $author }}{{- end -}}
+  {{- with $authorParam.avatar -}}{{ $author = dict "avatar" . | merge $author }}{{- end -}}
+{{- end -}}
+
+{{/*  gravatar服务，就是根据邮件地址匹配author的头像（avatar字段）  */}}
+{{- $gravatar := site.Params.gravatar -}}
+{{- if $gravatar.enable | and $author.email -}}
+  {{- with $gravatar -}}
+    {{- /* TODO migrate to gravatar */ -}}
+    {{- $author = dict "avatar" (printf "https://%v/avatar/%v?s=32&d=%v"
+      (path.Clean .Host | default "www.gravatar.com")
+      (md5 $author.email)
+      (.Style | default ""))
+      | merge $author 
+    -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $author -}}

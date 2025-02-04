@@ -1,0 +1,21 @@
+<section class="recent">
+    <h4 class="recent-menu-title">最近文章</h4>
+    {{- $recentPosts := where .Site.RegularPages.ByDate.Reverse "Type" "posts" | first 5 -}}
+    {{- if $recentPosts -}}
+        {{ range $recentPosts }}
+        <div class="recent-post">
+            <p class="recent-time">{{- .Date.Format "2006-01-02" -}}</p>
+            <p class="recent-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
+            <p class="recent-category">
+                {{- with .Params.categories -}} <!-- 检查是否有分类 -->
+                    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                {{- else -}}
+                <p class="recent-category">暂无分类</p>
+                {{- end -}}
+            </p>
+        </div>
+          {{- end -}}
+    {{- else -}}
+        <p>暂无文章</p>
+    {{- end -}}
+</section>

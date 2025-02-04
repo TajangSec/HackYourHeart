@@ -1,0 +1,43 @@
+{{/*  将作者传入get-author-map函数，生成$author  */}}
+{{- $author := partial "function/get-author-map.html" .Params.author -}}
+
+{{/*  作者与站点描述  */}}
+<meta name="author" content="{{ $author.name }}">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage | and .Summary }}{{ .Summary | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+
+{{/*  根据页面的关键词（Keywords）、标签（tags）或站点配置中的关键词（site.Params.keywords）动态生成关键词列表  */}}
+{{- $keywords := .Keywords -}}
+{{- if not $keywords -}}
+  {{- if .IsPage | and .Params.tags -}}
+    {{- $keywords = .Params.tags -}}
+  {{- else -}}
+    {{- $keywords = .Site.Params.keywords -}}
+  {{- end -}}
+{{- end -}}
+{{- with $keywords -}}
+  <meta name="keywords" content='{{ delimit . ", " }}'>
+{{- end -}}
+
+{{/*  生成页面的结构化数据（Schema）、Open Graph 和 Twitter Cards 的元标签，以及 Twitter 创建者信息  */}}
+{{- template "_internal/schema.html" . -}}
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}
+{{- with .Site.Params.social.Twitter -}}
+  <meta name="twitter:creator" content="@{{ . }}" />
+{{- end -}}
+
+<meta name="application-name" content="{{ .Site.Params.app.title | default .Site.Title }}">
+<meta name="apple-mobile-web-app-title" content="{{ .Site.Params.app.title | default .Site.Title }}">
+
+{{/*  生成与 PWA（Progressive Web App）和 Windows 磁贴相关的元标签  */}}
+{{- with .Site.Params.app.themeColor -}}
+  {{- $color := . -}}
+  {{- if ne (len $color) 2 -}}
+    {{- $color = dict "light" . "dark" . -}}
+  {{- end -}}
+  <meta name="theme-color" data-light="{{ $color.light }}" data-dark="{{ $color.dark }}" content="{{ $color.light }}">
+{{- end -}}
+
+{{- with .Site.Params.app.tileColor -}}
+  <meta name="msapplication-TileColor" content="{{ . }}">
+{{- end -}}

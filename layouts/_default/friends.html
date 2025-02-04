@@ -1,0 +1,47 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/*  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}  */}}
+{{/*  这个文件是tags和categories分类法的页面  */}}
+  {{/*  首页主体  */}}
+  <div class="home">
+    <div class="d-flex px-5 pt-6 leading-none sm:px-10" id="layout-wrapper">
+      {{/*  左侧垂直菜单  */}}
+        {{ partial "vertical-menu/vertical-menu.html" . }}
+        {{/*  文章区  */}}
+        <div class="main-content" style="width: 100%;">
+
+            {{/*  Friends区  */}}
+            <h1>Friends</h1>
+            <div class="friends-list">
+                
+                {{ range .Site.Data.friends.friend }}
+
+                <div class="friend-item">
+                    <a href="{{ .url }}" target="_blank">
+                        <!-- 左侧头像 -->
+                        <div class="friend-avatar">
+                            <img src="{{ .avatar }}" alt="{{ .name }}" />
+                        </div>
+                        <div class="friend-info">
+                            <h4 class="friend-name">{{ .name }}</h4>
+                            <span class="friend-bio">{{ .bio }}</span>
+                        </div>
+                    </a>
+                </div>
+                {{ end }}
+            </div>
+
+            <footer>
+              {{ partial "footer.html" . }}
+            </footer>
+        </div>
+    </div>
+  </div>
+{{ end }}

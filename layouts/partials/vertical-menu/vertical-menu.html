@@ -1,0 +1,27 @@
+<div>
+    <div class="h-100 overflow-auto">
+      {{/*  第一块基本信息  */}}
+      <div class="vertical-menu user-wid text-center py-4">
+        {{/*  头像  */}}
+        <div class="user-img">
+          <img src="../../Tajang.png" alt class="avatar-md mx-auto rounded-circle">
+        </div>
+        {{/*  文章数据、社交链接  */}}
+        <div class="mt-3">
+          <p class="mb-0 font-weight-medium font-size-16">{{ .Site.Params.author.name }}</p>
+          <p class="mt-1 mb-1">{{ .Site.Params.motto}}</p>
+          <p>
+            {{ partial "vertical-menu/social-links.html" . }}
+          </p>
+          {{ partial "vertical-menu/posts-statistics.html" . }}
+        </div>
+      
+      </div>
+      {{/*  第二块最近文章  */}}
+      <div class="vertical-menu">
+        {{partial "vertical-menu/recent-posts.html" . }}
+      </div>
+
+    </div>
+
+  </div>

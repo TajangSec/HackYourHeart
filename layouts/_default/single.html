@@ -1,0 +1,189 @@
+{{/*  {{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}  */}}
+{{ define "main" }}
+
+
+{{/*  懒加载  */}}
+{{ if (findRE "<img" .Content 1) }}
+    {{ $script := resources.Get "js/lazy-load.js" | minify | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}
+
+<!-- KaTeX 渲染数学公式和分数-->
+{{/*  动态加载  */}}
+{{/*  注意，如果要显示Katex数学公式字体正确渲染，需要把字体文件放在站点目录下的\static\lib\katex\fonts中  */}}
+{{/*  因为Katex的文件默认去所在目录引用fonts,但实际上assets里的fonts不会同步输出到public,但是static里的文件可以同步输出到public,所以你需要将fonts以相同的路径放到static里.
+比如assets/a/b/c/katex.min.js,你就要把fonts文件夹位置调整为 static/a/b/c/fonts */}}
+{{/*  物理化学公式需要Katex额外引入一些东西，这里不写了  */}}
+
+
+{{ $style := resources.Get "/lib/katex/katex.min.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ $script := resources.Get "/lib/katex/katex.min.js" | minify | fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ $script := resources.Get "/lib/katex/auto-render.min.js" | minify | fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"
+  onload="renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });"></script>
+
+
+{{/*  动态加载mermaid，用于渲染代码块的mermaid图像  */}}
+{{ if (findRE `(?s)<div class=\"mermaid\">.*?</div>` .Content 1) }}
+  {{ $mermaid := resources.Get "js/mermaid.min.js" | minify | fingerprint }}
+  <script defer src="{{ $mermaid.RelPermalink }}" integrity="{{ $mermaid.Data.Integrity }}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      mermaid.initialize({ 
+        startOnLoad: true,
+        //主题与文字居中
+        theme:'{{ if site.Params.mermaid.theme }}{{ site.Params.mermaid.theme }}{{ else }}dark{{ end }}',
+        align:'{{ if site.Params.mermaid.align }}{{ site.Params.mermaid.align }}{{ else }}center{{ end }}',
+      });
+    });
+  </script>
+{{ end }}
+
+{{/*  加载bootstrap，如果后续single.html添加了header，那么这些可以删掉，header包含了bootstrap和fuse搜索  */}}
+{{ $styles := resources.Get "lib/bootstrap/bootstrap.min.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+{{ $js := resources.Get "lib/bootstrap/bootstrap.bundle.min.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ $js := resources.Get "lib/bootstrap/popper.min.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+
+{{/*  fontawesome-free  */}}
+{{/*  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">  */}}
+
+{{/*  给所有代码块添加copy按钮,见https://github.com/TajangSec/copy-code-button  */}}
+{{ if (findRE "<pre" .Content 1) }}
+    {{ $js := resources.Get "js/copy-code-button.js" | minify | fingerprint }}
+    <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}
+
+{{ if (findRE "<pre" .Content 1) }}
+    {{ $js := resources.Get "js/fold.js" | minify | fingerprint }}
+    <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}
+
+  {{/*  封面图作为背景  */}}
+  <div class="post-cover-div">
+    {{ $cover := .Params.cover | default "/default-image.png" }}
+    <div class="cover-image" style="background-image: url('{{ $cover }}');"></div>
+    <div class="cover-gradient"></div> <!-- 添加渐变层 -->
+    <div class="cover-mask"></div> <!-- 添加遮罩 -->
+  </div>
+{{/*  上半部分 */}}
+<div class="post-body d-flex flex-column">
+    {{/*  maincontent用于固定footer  */}}
+  <div class="main-content" style="width: 100%;">
+    <div class="post-header d-flex flex-column">
+      <div class="card-cate-time">
+        {{- $content := .Content -}} <!-- 获取文章内容 -->
+        {{- $wordCount := countwords $content -}} <!-- 计算字数 -->
+        {{- $readingSpeed := .Site.Params.readingSpeed | default 200 -}} <!-- 获取阅读速度 -->
+        {{- $readingTime := div $wordCount $readingSpeed | math.Ceil -}} <!-- 计算阅读时间 -->
+        {{- if lt $readingTime 1 -}}
+        
+            {{- with .Params.categories -}} <!-- 检查是否有分类 -->
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | 1分钟内</span>
+              {{- else -}}
+                  暂无分类<span> | 1分钟内</span>
+            {{- end -}}
+          {{- else -}}
+              {{- with .Params.categories -}} <!-- 检查是否有分类 -->
+                  <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | {{$readingTime}}分钟</span>
+                {{- else -}}
+                    暂无分类<span> | {{$readingTime}}分钟</span>
+                {{- end -}}
+        {{- end -}}
+      </div>
+      {{/*  文章标题  */}}
+      <div class="post-title">
+        {{ .Title }}
+      </div>
+      {{/*  文章时间  */}}
+      <div class="post-time">
+        {{ .Date.Format "Jan 02，2006" }}
+        {{/*  当最后修改时间与创建时间不同时显示文章最后更新时间，对比精度为天  */}}
+        {{/*  如果想让精度为秒，对比语句直接写{{ if ne .Date.Unix .Lastmod.Unix }}  */}}
+        {{ $createDate := .Date.Format "Jan 02，2006" }}
+        {{ $updateDate := .Lastmod.Format "Jan 02，2006" }}
+        {{ if ne $createDate $updateDate }}
+        <span class="update-notice">
+          本文最后更新于 {{ $updateDate }}
+        </span>
+        {{ end }}
+      </div>
+
+      {{/*  标签  */}}
+      {{/*  随机tags颜色，但是同一种标签颜色相同  */}}
+      <div class="tags">
+        {{ $classList := slice "badge-soft-dark" "badge-soft-primary" "badge-soft-success" "badge-soft-purple" "badge-soft-warning" "badge-soft-danger" }}
+        {{ range .Params.tags }}
+          {{ $tag := . }}
+          {{ $hash := sha1 $tag }}
+            <!-- 将哈希值的前 8 个字符转换为整数 -->
+          {{ $hashPrefix := substr $hash 0 8 }}
+          {{ $hashInt := int (printf "0x%s" $hashPrefix) }}
+          <!-- 计算索引 -->
+          {{ $index := mod $hashInt (len $classList) }}
+          <!-- 根据索引选择 class -->
+          {{ $class := index $classList $index }}
+          <!-- 渲染标签 -->
+          <span class="badge mr-1 font-size-13 {{ $class }}">{{ $tag }}</span>
+        {{ end }}
+      </div>
+    </div>
+    {{/*  下半部分，以及上一篇下一篇以及目录  */}}
+    <div class="main-grid">
+      {{/*这个div是正文加上下篇  */}}
+      <div>
+        {{/*  正文  */}}
+          <div class="post-html">
+            {{ .Content | emojify}}
+          </div>
+          {{/*  上下篇  */}}
+
+
+
+      </div>
+
+      {{/*这个div是目录 与主页返回 */}}
+      <div>
+        <div class="main-right">
+          {{/*  主页与返回  */}}
+          <div class="menu">
+            <ul>
+              <li><a class="gohome" href="/">
+                {{ $svg := resources.Get "svgs/home.svg" }}{{ $svg.Content | safeHTML }}
+              </a></li>
+              <li><a class="goback" href="javascript:history.back(-1)">
+                {{ $svg := resources.Get "svgs/back-arrow.svg" }}{{ $svg.Content | safeHTML }}
+              </a></li>
+              <li><a class="gotop" href="#">
+                {{ $svg := resources.Get "svgs/backtop.svg" }}{{ $svg.Content | safeHTML }}
+              </a></li>
+            </ul>
+          </div>
+
+          <div class="toc">
+            {{ .TableOfContents }}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <footer>
+      {{ partial "footer.html" . }}
+    </footer>
+  </div>
+</div>
+{{ end }}

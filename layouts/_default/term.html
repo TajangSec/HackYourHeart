@@ -1,0 +1,79 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/*  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}  */}}
+
+  {{/*  首页主体  */}}
+<script>
+  // 获取 URL 中的分类或标签
+function getTermFromURL() {
+  
+  const path = window.location.pathname; // 获取当前路径
+  const parts = path.split("/"); // 按斜杠分割路径
+  if (parts[1] === "categories" && parts[2]) {
+    return { type: "Category", term: parts[2] };
+  } else if (parts[1] === "tags" && parts[2]) {
+    return { type: "Tag", term: parts[2] };
+  }
+  return null; // 如果没有匹配的分类或标签，返回 null
+}
+
+// 根据分类或标签筛选文章卡片
+function filterPostsByTerm(termType, term) {
+  const fcards = document.querySelectorAll(".fcard");
+
+  fcards.forEach((fcard) => {
+    const cardCategory = fcard.getAttribute("data-category");
+    const cardTags = fcard.getAttribute("data-tags");
+
+    // 根据分类或标签筛选
+    
+    if (
+      (termType === "Category" && cardCategory === term) ||
+      (termType === "Tag" && cardTags.includes(term))
+    ) {
+      fcard.style.display = "block";
+    } else {
+      fcard.style.display = "none";
+    }
+  });
+}
+
+// 页面加载时自动筛选
+document.addEventListener("DOMContentLoaded", function () {
+  const termInfo = getTermFromURL(); // 获取 URL 中的分类或标签
+  // 创建分类术语页面标题
+    const h1 = document.createElement("h1");
+    h1.textContent = `${termInfo.type} / ${decodeURIComponent(termInfo.term)}`
+    const container = document.querySelector(".main-content");
+    container.insertBefore(h1, container.firstChild);
+
+  if (termInfo) {
+    filterPostsByTerm(termInfo.type, termInfo.term); // 筛选文章卡片
+  }
+});
+</script>
+
+  <div class="home">
+    <div class="d-flex px-5 pt-6 leading-none sm:px-10" id="layout-wrapper">
+      {{/*  左侧垂直菜单  */}}
+        {{ partial "vertical-menu/vertical-menu.html" . }}
+        {{/*  文章区  */}}
+        <div class="main-content" style="width: 100%;">
+
+          {{/*  文章卡片区  */}}
+            {{ partial "posts-list.html" . }}
+
+            <footer>
+              {{ partial "footer.html" . }}
+            </footer>
+        </div>
+    </div>
+  </div>
+{{ end }}

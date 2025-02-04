@@ -1,0 +1,65 @@
+.taxonomy-page h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.main-content h1{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.tags-list{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: auto;
+}
+.tag-item{
+    
+    box-sizing: border-box;
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: #b0bbd4;
+    }
+}
+.tag{
+    background-color: #23334A;
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    padding: 0.15rem 0.5rem;
+}
+.tag-count{
+    margin-left: 0;
+    background-color: #39414e;
+    border-radius: 0 4px 4px 0;
+    padding: 0.15rem 0.5rem;
+    aspect-ratio: 1 / 1
+}
+.categories-list{
+    margin: 0 auto;
+    width: 50%;
+    background-color: #23334A;
+    border-radius: $big-radius;
+    
+    a{
+        display: flex;
+        text-decoration: none;
+        color: #b0bbd4;
+        &:hover{
+            color: $header-hover-color;
+        }
+    }
+    ul{
+        list-style: none; /* 去掉项目符号 */
+        padding: 0.5rem 1rem;
+    }
+}
+.category-count{
+    margin-left: auto
+}

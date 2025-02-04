@@ -1,0 +1,69 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/*  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}  */}}
+{{/*  这个文件是tags和categories分类法的页面  */}}
+  {{/*  首页主体  */}}
+  <div class="home">
+    <div class="d-flex px-5 pt-6 leading-none sm:px-10" id="layout-wrapper">
+      {{/*  左侧垂直菜单  */}}
+        {{ partial "vertical-menu/vertical-menu.html" . }}
+        {{/*  文章区  */}}
+        <div class="main-content" style="width: 100%;">
+
+          {{/*  标签分类区  */}}
+          <div class="taxonomy-page">
+            {{/*  动态获取标题  */}}
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        
+            {{ if eq .Data.Plural "tags" }}
+              <!-- Tags 页面样式 -->
+              <div class="tags-list">
+                {{ range .Data.Terms.ByCount }}
+                  <div class="tag-item">
+                    <a href="{{ .Page.RelPermalink }}" class="tag-link">
+                    <span class="tag"> {{ .Page.LinkTitle }}</span><span class="tag-count">{{ .Count }}</span>
+                </a>
+                  </div>
+                {{ end }}
+              </div>
+            {{ else if eq .Data.Plural "categories" }}
+              <!-- Categories 页面样式 -->
+              <div class="categories-list">
+                <ul>
+                {{ range .Data.Terms.ByCount }}
+                <li class="category-item">
+
+                    <a href="{{ .Page.RelPermalink }}" class="category-link"><span class="category">{{ .Page.LinkTitle }}</span><span class="category-count">{{ .Count }}</span></a>
+
+                </li>
+                {{ end }}
+            </ul>
+              </div>
+            {{ else }}
+              <!-- 其他分类法 -->
+              <div class="terms-list">
+                {{ range .Data.Terms.ByCount }}
+                  <div class="term-item">
+                    <a href="{{ .Page.RelPermalink }}" class="term-link">{{ .Page.LinkTitle }}</a>
+                    <span class="term-count">({{ .Count }})</span>
+                  </div>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+
+          <footer>
+            {{ partial "footer.html" . }}
+          </footer>
+        </div>
+    </div>
+  </div>
+{{ end }}

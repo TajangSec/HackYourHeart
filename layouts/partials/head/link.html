@@ -1,0 +1,86 @@
+{{/*  link好难写  */}}
+{{/*  获取 CDN 配置，资源指纹  */}}
+{{- $cdn := .Scratch.Get "cdn" | default dict -}}
+{{- $fingerprint := .Scratch.Get "fingerprint" -}}
+
+{{/*  设置页面标题，生成格式：“页面标题 分隔符 站点标题”  */}}
+{{- $title := printf "%s %s %s" .Title .Site.Params.titleDelimiter .Site.Title -}}
+{{- if .IsHome -}}
+  {{- $title = site.Title -}}
+{{- end -}}
+
+{{/*  生成页面的 Favicon 和相关图标链接  */}}
+{{- if not .Site.Params.app.noFavicon -}}
+  {{- with .Site.Params.app.svgFavicon -}}
+    <link rel="icon" href="{{ . }}">
+  {{- else -}}
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  {{- end -}}
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  {{- with .Site.Params.app.iconColor -}}
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ . }}">
+  {{- end -}}
+  {{- if eq .Site.Params.enablePWA true -}}
+    <link rel="manifest" href="/site.webmanifest">
+  {{- end -}}
+{{- end -}}
+
+{{/*  生成 Canonical URL，帮助搜索引擎识别页面的主版本  */}}
+<link rel="canonical" type="text/html" href="{{ .Permalink }}" title="{{ $title }}" />
+{{/*  生成 上一页、下一页 链接  */}}
+{{- with .Prev -}}
+  <link rel="prev" type="text/html" href="{{ .Permalink }}" title="{{ .Title }}" />
+{{- end -}}
+{{- with .Next -}}
+  <link rel="next" type="text/html" href="{{ .Permalink }}" title="{{ .Title }}" />
+{{- end -}}
+{{/*  生成替代输出格式链接  */}}
+{{- range .AlternativeOutputFormats -}}
+  {{- printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $title | safeHTML -}}
+{{- end -}}
+
+{{/*  生成 Mastodon 社交媒体验证的 <link> 和 <meta> 标签，动态生成 Mastodon 个人资料的 URL  */}}
+{{- /* 验证站点的Mastodan */ -}}
+{{- with .Site.Params.social.Mastodon -}}
+  {{- $mastodonConfig := . -}}
+  {{- $id := "" -}}
+  {{- $prefix := "https://mastodon.social/" -}}
+
+  {{- /* 判断字符串 */ -}}
+  {{- if printf "%T" $mastodonConfig | eq "string" -}}
+    {{- $id = strings.TrimPrefix "@" $mastodonConfig -}}
+
+  {{- /* 判断map对象 */ -}}
+  {{- else if printf "%T" $mastodonConfig | eq "map[string]interface {}" -}}
+    {{- $id = .Id | default .id | default "" | strings.TrimPrefix "@" -}}
+    {{- $prefix = .Prefix | default .prefix | default $prefix -}}
+  
+  {{- /* 若既不是string，也不是map，就什么都不做 */ -}}
+  {{- else -}}
+    {{- errorf "Invalid Mastodon configuration: %#v" $mastodonConfig -}}
+  {{- end -}}
+
+  {{- /* 移除前缀中的尾部斜杠 */ -}}
+  {{- $prefix = strings.TrimSuffix "/" $prefix -}}
+
+  {{- /* 生成个人资料URL */ -}}
+  {{- $profileUrl := printf "%s/@%s" $prefix $id -}}
+
+  {{- /* id有效时添加这些 */ -}}
+  {{- if $id -}}
+    <link rel="me" href="{{ $profileUrl }}" />
+    <meta name="fediverse:creator" content="{{ $id }}@{{ (urls.Parse $prefix).Host }}" />
+  {{- end -}}
+{{- end -}}
+
+{{- /* 将自定义scss、目标路径等内容加入到$options */ -}}
+{{- $options := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
+{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" true -}}
+{{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
+{{/*  将$options传入plugin/style.html，这个文件是编译并导入样式的  */}}
+{{- partial "plugin/style.html" $options -}}
+
+{{- /* 图标库 */ -}}
+{{/*  {{- $source := $cdn.fontawesomeFreeCSS | default "lib/fontawesome-free/all.min.css" -}}
+{{- $options := dict "Source" $source "Fingerprint" $fingerprint "Preload" true -}}
+{{- partial "plugin/style.html" $options -}}  */}}

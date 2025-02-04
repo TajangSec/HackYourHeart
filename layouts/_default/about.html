@@ -1,0 +1,30 @@
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+
+  {{/*  {{ range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end }}  */}}
+
+  {{/*  首页主体  */}}
+  <div class="home">
+    <div class="d-flex px-5 pt-6 leading-none sm:px-10" id="layout-wrapper">
+      {{/*  左侧垂直菜单  */}}
+        {{ partial "vertical-menu/vertical-menu.html" . }}
+        {{/*  文章区  */}}
+        <div class="main-content" style="width: 100%;">
+          
+            <h1>About</h1>
+            <div class="about-list">
+                {{ .Content }}
+            </div>
+            <footer>
+              {{ partial "footer.html" . }}
+            </footer>
+        </div>
+    </div>
+  </div>
+{{ end }}

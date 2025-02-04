@@ -1,0 +1,4 @@
+{{/*  将页面参数（page.Params）与站点配置中的页面参数（site.Params.page）合并，并返回合并后的结果  */}}
+{{/*  这个文件获取的是文章的作者信息，没有写的话就用站点里的，其他页面不能通过这个文件获取站点作者，获取站点作者老老实实用.Site.Params.author.name  */}}
+{{- $params := page.Params | merge site.Params.page -}}
+{{- return $params -}}
