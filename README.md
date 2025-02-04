@@ -92,6 +92,8 @@ https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/
 
 物理化学公式需要Katex额外引入一些东西，这里不写了
 
+创建带空格或特殊字符文章，用`hugo new "posts/测试 3345.md"`
+
 可以使用这个脚本为所有文章生成slug：[https://github.com/TajangSec/genslug](https://github.com/TajangSec/genslug)
 
 ## Configuration
