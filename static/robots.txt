@@ -1,0 +1,7 @@
+Sitemap: https://h4cker.zip/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.svg$
