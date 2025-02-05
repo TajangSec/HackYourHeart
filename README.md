@@ -1,60 +1,58 @@
 # Hack Your Heart
 
-## Features
-
-没什么特色，都是一些基础功能，你能在其他主题看到相同功能。唯一的特色可能就是我的每种标签颜色是随机的，许多细节真的非常难搞。搜索功能非常快速美观，代码块结合chroma自定义效果，目录自己写的，各种公式、javascript其中各种冲突，搞得累死我了。
-
 写这个主题是因为我在Hugo的主题仓库里没有找到喜欢的主题。
 
 因为我是一个~~黑客~~脚本小子，我想要更有黑客风格的博客，但是没找到。于是想要自己写一个博客主题。
 
 由于我不会前端，写这个主题十分困难，许多HTML、CSS、JS、F12工具都是我现学的。这个主题也是我边学边写。
 
+## 特色
+
+没什么特色，都是一些基础功能，你能在其他主题看到相同功能。
+
+许多细节真的非常难搞。搜索功能我很满意，它快速美观。代码块部分结合chroma自定义效果，目录自己写的，各种公式、javascript其中各种冲突，搞得累死我了。
+
+尤其是代码块的表格显示，行号冲突，锚点冲突，又没有复制按钮。其中魔改了一个js，其中许多搞笑的bug，不过都解决了。
+
 i18n还没搞
 
-虽然页面有所借鉴，但都是我自己写的代码，代码非常烂，性能也不好。但是够我自己用了。
+虽然页面布局有所借鉴，但都是我自己写的代码，代码非常烂，性能也不好，我尽量加上了懒加载和Hugo自身的资源引用语法。性能够我自己用了。
 
-参考Hack The Box的机器风格与博客风格
+首页参考Hack The Box的Modules页面，色系同HTB
 
-色系同htb
+Hugo没有心目中的黑客主题，相近的大概是：https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/hugo-theme-hello-friend) ），新的hello-friend-ng也不太行
 
-由于我之前使用的hexo-theme-aurora有大量封面图，也舍不得扔了，Hugo没有心目中的黑客主题，相近的大概是：
-
-https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/hugo-theme-hello-friend) ），新的hello-friend-ng也不太行
-
-其实phithon、远海、y4tacker，风格都不错。但是我图床多，封面图也有，他们那个暗黑主题不喜欢。
+其实phithon、远海、y4tacker，风格都不错，他们那个暗黑主题不喜欢。由于我之前使用的hexo-theme-aurora有大量封面图，也舍不得扔掉那么多封面。
 
 其次是3gstudent的，非常不错，但是感觉差了点什么，类似的最好的就是[ficurinia](https://gitlab.com/gabmus/hugo-ficurinia)，真的漂亮，但我都看那么多了，不如自己搞
 
 主题参考了Fixit、ficurinia等等的实现思路
 
-很早以前我就喜欢htb风格，漫画图标，酷的配色。黑客浸入感极强。比i春秋，春秋运镜，其他国内CTF、靶场好太多了。国内许多靶场就喜欢搞个普通烂大街的蓝色科技感驾驶舱大屏
+很早以前我就喜欢HTB风格，漫画图标，酷的配色。黑客浸入感极强。比国内一些CTF、靶场好太多了。国内许多靶场就喜欢搞个普通烂大街的蓝色科技感驾驶舱大屏
 
 现在不是很懂前端，大学学的三剑客貌似没啥用，于是边学边写
 
-
-
-主页：
+### 主页/Home：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhome.png)
 
-分类：
+### 分类/Categories：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcategories.png)
 
-标签：
+### 标签/Tags：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.png)
 
-存档：
+### 存档/Archives：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyharchives.png)
 
-朋友：
+### 朋友/Friends：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhfriends.png)
 
-关于：
+### 关于/About：
 
 这里就是markdown直接写
 
@@ -62,19 +60,21 @@ https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/
 
 
 
-文章：
+### 文章/Post page：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhpost.png)
 
-代码块
+### 代码块/Codeblock：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcodeblock.png)
 
-数学公式、注音、emoji等等
+### 数学公式、注音、emoji/Math、Ruby、Emoji：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmathruby.png)
 
-渲染各种图像
+### 图像/Graph：
+
+goat、UML、Pie、git等等
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmermaid.png)
 
@@ -94,7 +94,7 @@ https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/
 
 创建带空格或特殊字符文章，用`hugo new "posts/测试 3345.md"`
 
-可以使用这个脚本为所有文章生成slug：[https://github.com/TajangSec/genslug](https://github.com/TajangSec/genslug)
+我为了让链接更短，使用sulg作为链接。slug生成规则是“标题|时间戳”的md5值取前6位。你嫌重复概率高可以改成8位。可以使用这个脚本为所有文章生成slug：[https://github.com/TajangSec/genslug](https://github.com/TajangSec/genslug)
 
 ## Configuration
 
@@ -249,4 +249,3 @@ timeZone = "Asia/Shanghai"
         ["$", "$"]
       ]
 ```
-
