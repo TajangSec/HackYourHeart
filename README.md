@@ -103,7 +103,7 @@ baseURL = 'https://example.org/'
 languageCode = 'en'
 title = '我的HTB博客'
 # defaultContentLanguage = "zh-cn"
-theme = "HackTheBox-Style"
+theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
 
@@ -115,6 +115,7 @@ timeZone = "Asia/Shanghai"
     motto="临渊羡鱼，不如退而结网"
     # 页脚的版权起始年份
     since="2020"
+    # 标签页的分隔符
     titleDelimiter="|"
 
     siteCreationDate = "2020-12-26T16:01:46.000Z"  # 设置建站日期
@@ -123,6 +124,7 @@ timeZone = "Asia/Shanghai"
         name = "Tajang"
         email = "Tajang@qq.com"
         link = "https://h4cker.zip"
+        # 把头像放到static就行，或者替换默认头像
         avatar = "Tajang.png"
         # App图标配置
     [params.social]
@@ -158,7 +160,7 @@ timeZone = "Asia/Shanghai"
 
     [params.app]
         # 可选 应用站点标题覆盖（添加到 iOS 主屏幕或 Android 启动器时）
-        title = "HackThebox Style"
+        title = "HackYourHeart"
         # 是否省略 favicon 资源链接
         noFavicon = false
         # 现代 SVG 图标，用于替代旧式.png 和.ico 文件
