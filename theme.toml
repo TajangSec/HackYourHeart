@@ -1,17 +1,17 @@
-name = 'Theme name'
+name = 'HackYourHeart'
 license = 'MIT'
 licenselink = 'https://github.com/owner/repo/LICENSE'
-description = 'Theme description'
+description = 'The feeling of IT workers studying technology late at night'
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/TajangSec/HackYourHeart'
 
 # If you have a running demo of the theme
-demosite = 'https://owner.github.io/repo'
+demosite = 'https://h4cker.zip/'
 
 # Taxonomy terms
-tags = ['blog', 'company']
-features = ['some', 'awesome', 'features']
+tags = ['blog', 'Hacker', 'Dark']
+features = ['colorful', 'awesome', 'features']
 
 # If the theme has multiple authors
 authors = [
@@ -21,8 +21,8 @@ authors = [
 
 # If the theme has a single author
 [author]
-  name = 'Your name'
-  homepage = 'Your website'
+  name = 'Tajang'
+  homepage = 'https://h4cker.zip/'
 
 # If porting an existing theme
 [original]
