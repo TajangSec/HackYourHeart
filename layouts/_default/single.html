@@ -73,8 +73,9 @@
 
   {{/*  封面图作为背景  */}}
   <div class="post-cover-div">
-    {{ $cover := .Params.cover | default "/default-image.png" }}
-    <div class="cover-image" style="background-image: url('{{ $cover }}');"></div>
+    {{ $defaultCover := resources.Get "default-cover.png" | fingerprint }}
+    {{ $cover := .Params.cover | default $defaultCover.RelPermalink }}
+    <div class="cover-image" style="background-image: url('{{ $cover }}'),url('{{ $defaultCover.RelPermalink }}');"></div>
     <div class="cover-gradient"></div> <!-- 添加渐变层 -->
     <div class="cover-mask"></div> <!-- 添加遮罩 -->
   </div>
