@@ -32,13 +32,21 @@
     {{- range $pages -}}
     <div class="col-xl-4 col-md-6 fcard" data-category="{{ .Params.categories | urlize }}" data-tags="{{ delimit (apply .Params.tags "urlize" ".") " " }}">
         <div class="card">
-          {{/*  文章封面  */}}
+          {{/* 文章封面 */}}
+          {{/*  当没有设置封面或封面图片加载错误时，使用默认封面  */}}
           <div class="card-cover">
             <a href="{{ .RelPermalink }}">
-            {{ $cover := .Params.cover | default "../../default-image.png" }}
-            <img src="{{ $cover }}" alt="Cover Image" class="card-img-top img-fluid">
-          </a>
+              {{ $defaultCover := resources.Get "default-cover.png" | fingerprint }}
+              {{ $cover := .Params.cover | default $defaultCover.RelPermalink }}
+              <img 
+                src="{{ $cover }}" 
+                alt="Cover Image" 
+                class="card-img-top img-fluid"
+                onerror="this.onerror=null;this.src='{{ $defaultCover.RelPermalink }}';"
+              >
+            </a>
           </div>
+
           {{/*  文字区  */}}
           <div class="card-text">
             {{- $content := .Content -}} <!-- 获取文章内容 -->
