@@ -32,7 +32,9 @@ header{
 #layout-wrapper{
     padding: 0 4rem !important;
 }
-
+.nav-bar{
+    flex-wrap: nowrap !important;
+}
 .nav a{
     color: #fff;
     text-decoration: none;
@@ -54,6 +56,7 @@ header{
     text-align: left;
     margin-right: 24px;
     width: 240px;
+    line-height: $header-height;
 }
 #search-bar{
     width: 360px;
