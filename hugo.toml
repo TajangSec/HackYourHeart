@@ -2,7 +2,7 @@ baseURL = 'https://h4cker.zip/'
 languageCode = 'en'
 title = '我的HTB博客'
 # defaultContentLanguage = "zh-cn"
-theme = "HackTheBox-Style"
+theme = "HackYourHeart"
 
 [[menus.main]]
 name = 'Home'
