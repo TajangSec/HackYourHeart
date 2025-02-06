@@ -138,7 +138,7 @@ timeZone = "Asia/Shanghai"
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
         # heybox = {url="",icon="svgs/heybox .svg"}
         csdn = {url="https://blog.csdn.net/qq_45619909?type=blog",icon="svgs/csdn.svg"}
-        rss = {url="http://localhost:1313/index.xml",icon="svgs/rss.svg"}
+        rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
         # flag = {url="",icon="svgs/flag.svg"}
