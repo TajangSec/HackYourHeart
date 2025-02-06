@@ -83,7 +83,7 @@ timeZone = "Asia/Shanghai"
   posts = "/post/:slug"
 
 [outputs]
-  home = ["HTML", "RSS",]
+  home = ["HTML", "RSS", "JSON"]
   
 [module]
   [module.hugoVersion]
