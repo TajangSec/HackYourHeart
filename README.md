@@ -102,11 +102,16 @@ goat、UML、Pie、git等等
 baseURL = 'https://h4cker.zip/'
 languageCode = 'en'
 title = 'Tajang的幽暗角落'
-# defaultContentLanguage = "zh-cn"
 theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
 
+defaultContentLanguage = "zh"
+[languages]
+  [languages.zh]
+    lang = "zh"
+    languageName = "中文"
+    weight = 1
 
 [params]
     # 站点描述会显示在SEO
@@ -184,7 +189,7 @@ timeZone = "Asia/Shanghai"
   posts = "/post/:slug"
 
 [outputs]
-  home = ["HTML", "RSS",]
+  home = ["HTML", "RSS", "JSON"]
   
 [module]
   [module.hugoVersion]

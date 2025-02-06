@@ -71,7 +71,10 @@
                 {{- end -}}
             </div>
             <p class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>
-            <p class="card-time">{{ .Date.Format "Jan 02，2006" }}</p>
+            
+            {{/*  <p class="card-time">{{ .Date.Format "Jan 02，2006" }}</p>  */}}
+            {{/*  下面这个方式可以通过hugo.toml里配置的defaultContentLanguage进行本地化，就是显示中文，其他页面的改动同理  */}}
+            <p class="card-time">{{ .Date | time.Format "January 2, 2006" }}</p>
 
             {{/*  随机tags颜色，但是同一种标签颜色相同  */}}
             <div class="tags">

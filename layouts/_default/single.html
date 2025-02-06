@@ -110,11 +110,11 @@
       </div>
       {{/*  文章时间  */}}
       <div class="post-time">
-        {{ .Date.Format "Jan 02，2006" }}
+        {{ .Date | time.Format "January 2, 2006" }}
         {{/*  当最后修改时间与创建时间不同时显示文章最后更新时间，对比精度为天  */}}
         {{/*  如果想让精度为秒，对比语句直接写{{ if ne .Date.Unix .Lastmod.Unix }}  */}}
-        {{ $createDate := .Date.Format "Jan 02，2006" }}
-        {{ $updateDate := .Lastmod.Format "Jan 02，2006" }}
+        {{ $createDate := .Date | time.Format "January 2, 2006" }}
+        {{ $updateDate := .Date | time.Format "January 2, 2006" }}
         {{ if ne $createDate $updateDate }}
         <span class="update-notice">
           本文最后更新于 {{ $updateDate }}
