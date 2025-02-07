@@ -34,49 +34,49 @@ Hugo没有心目中的黑客主题，相近的大概是：https://hackingcapital
 
 ### 主页/Home：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhome.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhome.webp)
 
 ### 分类/Categories：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcategories.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcategories.webp)
 
 ### 标签/Tags：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.webp)
 
 ### 存档/Archives：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyharchives.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyharchives.webp)
 
 ### 朋友/Friends：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhfriends.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhfriends.webp)
 
 ### 关于/About：
 
 这里就是markdown直接写
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhabout.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhabout.webp)
 
 
 
 ### 文章/Post page：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhpost.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhpost.webp)
 
 ### 代码块/Codeblock：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcodeblock.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcodeblock.webp)
 
 ### 数学公式、注音、emoji/Math、Ruby、Emoji：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmathruby.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmathruby.webp)
 
 ### 图像/Graph：
 
 goat、UML、Pie、git等等
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmermaid.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmermaid.webp)
 
 ## Installation
 
@@ -130,7 +130,7 @@ defaultContentLanguage = "zh"
         email = "Tajang@qq.com"
         link = "https://h4cker.zip"
         # 把头像放到static就行，或者替换默认头像
-        avatar = "Tajang.png"
+        avatar = "Tajang.webp"
         # App图标配置
     [params.social]
     # 需要添加的社交链接就自己找svg图标，然后写，不需要的就注释掉，预置了几十种图标

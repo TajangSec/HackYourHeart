@@ -2,7 +2,7 @@
 {{- range where .Site.RegularPages "Type" "not in" (slice "page" "json") -}}
   {{- $page := . -}}
   {{- $content := $page.Plain | default "" -}} {{/* 获取文章内容 */}}
-  {{- $defaultCover := resources.Get "default-cover.png" | fingerprint -}}
+  {{- $defaultCover := resources.Get "default-cover.webp" | fingerprint -}}
   {{- $cover := $page.Params.cover | default $defaultCover.RelPermalink -}} {{/* 获取封面图 */}}
   {{- $entry := dict
     "title" $page.Title

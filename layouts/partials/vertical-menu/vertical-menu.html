@@ -4,7 +4,7 @@
       <div class="vertical-menu user-wid text-center py-4">
         {{/*  头像  */}}
         <div class="user-img">
-          <img src="../../Tajang.png" alt class="avatar-md mx-auto rounded-circle">
+          <img src="{{ $.Site.BaseURL }}{{ .Site.Params.author.avatar }}" alt class="avatar-md mx-auto rounded-circle">
         </div>
         {{/*  文章数据、社交链接  */}}
         <div class="mt-3">
