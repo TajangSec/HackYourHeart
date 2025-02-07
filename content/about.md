@@ -8,13 +8,8 @@ url = "/about/"
 
 +++
 
-{{< figure
-  src="../Tajang.png"
-  alt="未获取到图片"
-  link=""
-  caption=""
-  class=""
->}}
+{{< avatar >}}
+
 ## Who am I
 
 欢迎来到我的博客, 我是 Tajang
