@@ -6,7 +6,7 @@ draft = false
 tags = [ "Mod", "怪物猎人世界"]
 categories = "游戏Mod制作"
 slug = "7703af"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodcover.jpg"
+cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodcover.webp"
 
 +++
 
@@ -103,13 +103,13 @@ nativePC
 
 此时，灭尽一刀进游戏就是下图样子
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_1.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_1.webp" style="zoom:50%;" />
 
 注意，mrl3文件是存放路径的文件，这个mod模型引用贴图时使用相对路径。
 
 所以此mod的mrl3里显示如下：
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_2.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_2.webp" style="zoom:50%;" />
 
 所以此时替换模型只要替换文件名字，模型仍然能够正常引用贴图
 
@@ -175,7 +175,7 @@ nativePC
 
 进入游戏后，如下
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_3.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_3.webp" style="zoom:50%;" />
 
 可以看到，飞雷龙大刀2的附件模型由于没被替换而存在。所以这个时候需要使用屏蔽附件mod，每种武器都是有组合模型的，自然也有附件，所以每种附件都有对应的屏蔽mod
 
@@ -209,13 +209,13 @@ nativePC
 
 进入游戏居然报错，我看了这个屏蔽附件的两个mrl3文件，它的mrl3里引用路径如下图，
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_4.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_4.webp" style="zoom:50%;" />
 
 它居然调用的op_swo001的内容，那我将两个mrl3里的op_swo001全部修改为op_swo003。再试一下
 
 成功进入游戏，此时飞雷龙大刀2显示如下
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_5.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_5.webp" style="zoom:50%;" />
 
 成功去除了附件，但是有个奇怪的标志，这个标志是公会标志，也是有专门的公会标志屏蔽mod的。
 
@@ -254,13 +254,13 @@ nativePC
 
 重新安装此mod，启动游戏。
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_6.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_6.webp" style="zoom:50%;" />
 
 完美替换
 
 注意，上面说了由于部分武器共用一个模型，所以在替换模型时会导致其他武器也被替换了。如下图，碎龙偃月刀2的主模型就被替换了
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_7.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_7.webp" style="zoom:50%;" />
 
 那为什么刀柄那里的零件还是碎龙的呢？因为mod里添加的是屏蔽飞雷龙附件的mod，碎龙的没被屏蔽。
 
@@ -330,7 +330,7 @@ nativePC
 
 这个冰狼服装是幻化，因为我的mod没有头部，所以为了观感我将头部设置的是风火轮的头部幻化。如图
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_8.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_8.webp)
 
 在游戏里可以设置，不显示头部装备
 
@@ -403,7 +403,7 @@ nativePC
 
 此时游戏里如下图
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_9.png" style="zoom: 33%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_9.webp" style="zoom: 33%;" />
 
 掌握规律了吗，修改哪部分就找到那个部分编号，修改文件名，注意f_equip里装的是被修改的防具，修改一个防具就建立这套防具的文件夹，然后把这套防具你要修改的部位模型放进去，修改模型的文件名。
 
@@ -423,7 +423,7 @@ nativePC
 
 勾选此文件，点击提取
 
-<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_10.png" style="zoom:50%;" />
+<img src="https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_10.webp" style="zoom:50%;" />
 
 这个时候提取出了存放太刀音效的文件，注意这里路径为`ChunkG0/sound/wwise/Windows/wp03_swo_epvsp.nbnk`，制作好mod时文件路径是`nativePC/sound/wwise/Windows/wp03_swo_epvsp.nbnk`
 
@@ -431,11 +431,11 @@ nativePC
 
 使用wwiseutil打开wp03_swo_epvsp.nbnk，得到如下
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_11.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_11.webp)
 
 对比音效表太刀音效表的内容
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_12.png)
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodmaking_1_12.webp)
 
 可知见切成功音效是第13、14两个文件，所以在wwiseutil里点击13，再点击菜单栏的replace，选择准备好的音效文件就替换完成了，注意音效时长尽量等于原来的时长
 

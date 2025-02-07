@@ -6,7 +6,7 @@ draft = false
 tags = [ "Tier III", "Hard", "Offensive","2 days"]
 categories = "Module"
 slug = "bfff24"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/AdvancedSQLi.png"
+cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/AdvancedSQLi.webp"
 
 +++
 
