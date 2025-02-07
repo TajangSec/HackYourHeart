@@ -29,7 +29,7 @@ defaultContentLanguage = "zh"
         email = "Tajang@qq.com"
         link = "https://h4cker.zip"
         # 把头像放到static就行，或者替换默认头像
-        avatar = "Tajang.png"
+        avatar = "Tajang.webp"
         # App图标配置
     [params.social]
     # 需要添加的社交链接就自己找svg图标，然后写，不需要的就注释掉，预置了几十种图标
