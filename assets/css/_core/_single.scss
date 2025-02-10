@@ -51,6 +51,10 @@
         max-width: 100%;
     }
 }
+.post-body ::selection {
+    color: #9fef00;
+    background: rgba(0,0,0,.4);
+}
 .card-cate-time{
     a{
         text-decoration: none;
