@@ -146,9 +146,11 @@
       {{/*这个div是正文加上下篇  */}}
       <div>
         {{/*  正文  */}}
-          <div class="post-html">
-            {{ .Content | emojify}}
-          </div>
+        <div class="post-html">
+          {{/*  添加emoji渲染  */}}
+          {{/*  给a标签添加属性，作用是外部链接新建标签页打开，而内部链接不受影响，rel="noopener noreferrer"属性防止钓鱼攻击  */}}
+          {{ .Content | emojify | replaceRE "<a\\s+([^>]*href=\"https?://[^\"]+\"[^>]*)>" "<a $1 target=\"_blank\" rel=\"noopener noreferrer\">" | safeHTML }}
+        </div>
           {{/*  上下篇  */}}
 
 
