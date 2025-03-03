@@ -44,29 +44,40 @@
     text-align: center;
 }
 .badge-soft{
-    &-dark{
-        color: #d8dde9 !important;
-        background-color: #d8dde92e;
+    // 海青：https://www.zhongguose.com/#haiqing
+    &-haiqing{
+        color: #22a2c3 !important;
+        background-color: #22a2c32e;
     }
-    &-primary{
+    // 亮蓝
+    &-lianglan{
         color: #0086ff !important;
         background-color: #0086ff2e;
     }
-    &-success{
-        color: #9fef00 !important;
-        background-color: #9fef002e;
+    // 金盏黄：https://www.zhongguose.com/#jinzhanhuang
+    &-jinzhanhuang{
+        color: #fcc307 !important;
+        background-color: #fcc3072e;
     }
-    &-purple{
-        color: #c566ff !important;
-        background-color: #9f00ff2e;
+    // 茉莉黄：https://www.zhongguose.com/#molihuang
+    &-molihuang{
+        color: #f8df72 !important;
+        background-color: #f8df722e;
     }
-    &-warning{
-        color: #ffaf00 !important;
-        background-color: #ffaf002e;
+    // 淡绛红：https://www.zhongguose.com/#danjianghong
+    &-danjianghong{
+        color: #ec7696 !important;
+        background-color: #ec76962e;
     }
-    &-danger{
-        color: #ff3e3e !important;
-        background-color: #ff3e3e2e;
+    // 秋海棠红：https://www.zhongguose.com/#qiuhaitanghong
+    &-qiuhaitanghong{
+        color: #ec2b24 !important;
+        background-color: #ec2b242e;
+    }
+    // 玉髓绿：https://www.zhongguose.com/#yusuilv
+    &-yusuilv{
+        color: #41b349 !important;
+        background-color: #41b3492e;
     }
 }
 .card-cate-time{
