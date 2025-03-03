@@ -44,6 +44,14 @@ Hugo没有心目中的黑客主题，相近的大概是：https://hackingcapital
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.webp)
 
+这里你可以选择要不要和首页一样花哨的颜色：
+
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags2.webp)
+
+或者数目那里保持对比颜色
+
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags3.webp)
+
 ### 存档/Archives：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyharchives.webp)

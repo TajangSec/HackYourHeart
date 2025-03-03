@@ -21,33 +21,69 @@
           <div class="taxonomy-page">
             {{/*  动态获取标题  */}}
             <h1>{{ .Title }}</h1>
-            {{ .Content }}
-        
-            {{ if eq .Data.Plural "tags" }}
-              <!-- Tags 页面样式 -->
-              <div class="tags-list">
-                {{ range .Data.Terms.ByCount }}
-                  <div class="tag-item">
-                    <a href="{{ .Page.RelPermalink }}" class="tag-link">
-                    <span class="tag"> {{ .Page.LinkTitle }}</span><span class="tag-count">{{ .Count }}</span>
-                </a>
+              {{ .Content }}
+
+              {{ if eq .Data.Plural "tags" }}
+
+                {{/*  如果保持Tags页面的标签与主页的标签一样颜色，请将代码替换为注释里的，数目块样式，可通过添加 {{ $class}}或修改taxonomy.scss来设置  */}}
+                <!--  ======================= Tags页标签 随机 颜色 =======================  -->
+                <!-- 定义颜色列表 -->
+                
+                {{/*  {{ $classList := slice "badge-soft-haiqing" "badge-soft-lianglan" "badge-soft-jinzhanhuang" 
+                                      "badge-soft-molihuang" "badge-soft-danjianghong" "badge-soft-qiuhaitanghong" 
+                                      "badge-soft-yusuilv" }}
+                <div class="tags-list">
+                  {{ range .Data.Terms.ByCount }}
+                    {{ $tag := .Page.Data.Term }}
+                    <!-- 计算哈希值 -->
+                    {{ $hash := sha1 $tag }}
+                    {{ $hashPrefix := substr $hash 0 8 }}
+                    {{ $hashInt := int (printf "0x%s" $hashPrefix) }}
+                    <!-- 计算索引 -->
+                    {{ $index := mod $hashInt (len $classList) }}
+                    <!-- 获取对应的颜色类 -->
+                    {{ $class := index $classList $index }}
+
+                    <div class="tag-item">
+                      <a href="{{ .Page.RelPermalink }}" class="tag-link">
+                        <!-- 应用颜色类到标签 -->
+                        <!--  下面的两个span标签，如果换行写会导致有间隙  -->
+                        <span class="tag {{ $class }}">{{ $tag }}</span><span class="tag-count">{{ .Count }}</span>
+                      </a>
+                    </div>
+                  {{ end }}
+                </div>  */}}
+              <!--  ======================= Tags页标签 随机 颜色 =======================  -->
+
+                <!-- Tags 页面样式 -->
+                <!--  ======================= Tags页标签 固定 颜色 =======================  -->
+                <div class="tags-list">
+                  {{ range .Data.Terms.ByCount }}
+                    <div class="tag-item">
+                      <a href="{{ .Page.RelPermalink }}" class="tag-link">
+                      <span class="tag"> {{ .Page.Data.Term }}</span><span class="tag-count">{{ .Count }}</span>
+                  </a>
+                    </div>
+                  {{ end }}
+                </div>
+                <!--  ======================= Tags页标签 固定 颜色 =======================  -->
+
+
+
+                {{ else if eq .Data.Plural "categories" }}
+                  <!-- Categories 页面样式 -->
+                  <div class="categories-list">
+                    <ul>
+                    {{ range .Data.Terms.ByCount }}
+                    <li class="category-item">
+
+                        <a href="{{ .Page.RelPermalink }}" class="category-link"><span class="category">{{ .Page.LinkTitle }}</span><span class="category-count">{{ .Count }}</span></a>
+
+                    </li>
+                    {{ end }}
+                </ul>
                   </div>
-                {{ end }}
-              </div>
-            {{ else if eq .Data.Plural "categories" }}
-              <!-- Categories 页面样式 -->
-              <div class="categories-list">
-                <ul>
-                {{ range .Data.Terms.ByCount }}
-                <li class="category-item">
-
-                    <a href="{{ .Page.RelPermalink }}" class="category-link"><span class="category">{{ .Page.LinkTitle }}</span><span class="category-count">{{ .Count }}</span></a>
-
-                </li>
-                {{ end }}
-            </ul>
-              </div>
-            {{ else }}
+                {{ else }}
               <!-- 其他分类法 -->
               <div class="terms-list">
                 {{ range .Data.Terms.ByCount }}
