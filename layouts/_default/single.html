@@ -147,9 +147,9 @@
       <div>
         {{/*  正文  */}}
         <div class="post-html">
-          {{/*  添加emoji渲染  */}}
+          {{/*  之前这里我是手动渲染emoji，.Content | emojify | replaceRE···，这样导致代码块里也被渲染，这非常蠢，实际上不需要在这里渲染，站点配置enableEmoji = true即可，这是hugo自带的，而不是主题来完成  */}}
           {{/*  给a标签添加属性，作用是外部链接新建标签页打开，而内部链接不受影响，rel="noopener noreferrer"属性防止钓鱼攻击  */}}
-          {{ .Content | emojify | replaceRE "<a\\s+([^>]*href=\"https?://[^\"]+\"[^>]*)>" "<a $1 target=\"_blank\" rel=\"noopener noreferrer\">" | safeHTML }}
+          {{ .Content | replaceRE "<a\\s+([^>]*href=\"https?://[^\"]+\"[^>]*)>" "<a $1 target=\"_blank\" rel=\"noopener noreferrer\">" | safeHTML }}
         </div>
           {{/*  上下篇  */}}
 
