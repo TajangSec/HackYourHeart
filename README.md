@@ -115,6 +115,7 @@ theme = "HackYourHeart"
 timeZone = "Asia/Shanghai"
 
 defaultContentLanguage = "zh"
+enableEmoji = true
 [languages]
   [languages.zh]
     lang = "zh"
