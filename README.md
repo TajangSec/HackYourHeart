@@ -4,27 +4,31 @@
 
 因为我是一个~~黑客~~脚本小子，我想要更有黑客风格的博客，但是没找到。于是想要自己写一个博客主题。
 
-由于我不会前端，写这个主题十分困难，许多HTML、CSS、JS、F12工具都是我现学的。这个主题也是我边学边写。
+由于我不会前端，写这个主题十分困难，许多HTML、CSS、JS、F12花哨调试 工具都是我现学的。这个主题也是我边学边写。
 
 ## 特色
 
 没什么特色，都是一些基础功能，你能在其他主题看到相同功能。
 
-许多细节真的非常难搞。搜索功能我很满意，它快速美观。代码块部分结合chroma自定义效果，目录自己写的，各种公式、javascript其中各种冲突，搞得累死我了。
+许多细节真的非常难搞。搜索功能我很满意，它快速美观。代码块部分结合 Chrome 自定义效果，目录自己写的，各种公式、javascript 其中各种冲突，搞得累死我了。
 
 尤其是代码块的表格显示，行号冲突，锚点冲突，又没有复制按钮。其中魔改了一个js，其中许多搞笑的bug，不过都解决了。
 
 i18n还没搞
 
-虽然页面布局有所借鉴，但都是我自己写的代码，代码非常烂，性能也不好，我尽量加上了懒加载和Hugo自身的资源引用语法。性能够我自己用了。
+虽然页面布局有所借鉴，但都是我自己写的代码，代码非常烂，好在性能还行。我尽量加上了懒加载和Hugo自身的资源引用语法。性能够我自己用了。
 
-首页参考Hack The Box的Modules页面，色系同HTB
+首页参考Hack The Box Academy中Dashboard的 [Modules](https://academy.hackthebox.com/modules) 页面，色系同HTB：
 
-Hugo没有心目中的黑客主题，相近的大概是：https://hackingcapitalism.io/（二开自[hello-friend](https://github.com/panr/hugo-theme-hello-friend) ），新的hello-friend-ng也不太行
+![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/HTB_Modules.webp)
 
-其实phithon、远海、y4tacker，风格都不错，他们那个暗黑主题不喜欢。由于我之前使用的hexo-theme-aurora有大量封面图，也舍不得扔掉那么多封面。
+Hugo没有心目中的黑客主题，相近的大概是：[https://hackingcapitalism.io/](https://hackingcapitalism.io/)（二开自[hello-friend](https://github.com/panr/hugo-theme-hello-friend) ），新的hello-friend-ng也不太行
 
-其次是3gstudent的，非常不错，但是感觉差了点什么，类似的最好的就是[ficurinia](https://gitlab.com/gabmus/hugo-ficurinia)，真的漂亮，但我都看那么多了，不如自己搞
+其实 [phithon](https://www.leavesongs.com/)、[y4tacker](https://y4tacker.github.io/)，风格都不错，他们那个暗黑主题不喜欢。白色的推荐 [ol4three](https://www.ol4three.com/) 和 [X1r0z](https://exp10it.io/) 
+
+由于我之前使用的 hexo-theme-aurora 有大量封面图，也舍不得扔掉那么多封面。
+
+其次是 [3gstudent](https://3gstudent.github.io/) 的，非常不错，但是感觉差了点什么，类似的最好的就是 [ficurinia](https://gitlab.com/gabmus/hugo-ficurinia)，真的漂亮，但我都看那么多了，不如自己搞
 
 主题参考了Fixit、ficurinia等等的实现思路
 
@@ -44,7 +48,7 @@ Hugo没有心目中的黑客主题，相近的大概是：https://hackingcapital
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.webp)
 
-这里你可以选择要不要和首页一样花哨的颜色：
+这里你可以选择要不要和首页一样花哨的颜色（目前已取消彩色）：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags2.webp)
 
