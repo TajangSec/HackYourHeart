@@ -2,23 +2,25 @@
 // Variables
 // ==============================
 
-//为Emoji字符指定字体
-@font-face {
-    font-family: Emoji;
-    src: local("Apple Color Emoji"), local("Segoe UI Emoji"), local("Segoe UI Symbol"), local("Noto Color Emoji");
-    unicode-range: U+1F000-1F644, U+203C-3299;
-  }
-
 // ========== Global ========== //
 // 字体与行高
 // neue-haas-unica是HackTheBox默认字体
-$global-font-family: neue-haas-unica,system-ui, -apple-system, Segoe UI, Roboto, Emoji, Helvetica, Arial, sans-serif !important;
+$global-font-family:
+    neue-haas-unica,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Emoji,
+    Helvetica,
+    Arial,
+    sans-serif !important;
 $global-font-size: 18px !important;
 $global-font-weight: 400 !important;
 $global-line-height: 2rem !important;
 
 // 背景颜色
-$global-background-color: #141d2b !important;;
+$global-background-color: #141d2b !important;
 
 // 文字颜色
 $global-text-color: #d8dce3 !important;
@@ -34,10 +36,18 @@ $header-text-height: 1.5rem !important;
 $header-height: 60px !important;
 
 // 页眉字体和大小
-$header-title-font-family: $global-font-family !important;
+$header-title-font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Emoji,
+    Helvetica,
+    Arial,
+    sans-serif !important;
 $header-title-font-size: 16px !important;
-$header-title-font-weight: 600 !important;;// 页眉背景颜色
-$header-background-color: #23334A !important;
+$header-title-font-weight: 600 !important; // 页眉背景颜色
+$header-background-color: #23334a !important;
 
 // 页眉菜单项被选中颜色
 $header-hover-color: #9fef00 !important;
@@ -72,4 +82,4 @@ $vertical-text-color: #a4b1cd !important;
 // 页脚
 $footer-height: 60px;
 $footer-background-color: #273344 !important;
-$footer-text-color:#a6b0cf !important;
+$footer-text-color: #a6b0cf !important;

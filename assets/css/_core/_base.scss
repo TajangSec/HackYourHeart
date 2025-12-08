@@ -1,3 +1,28 @@
+//为Emoji字符指定字体
+@font-face {
+    font-family: Emoji;
+    src:
+        local("Apple Color Emoji"), local("Segoe UI Emoji"),
+        local("Segoe UI Symbol"), local("Noto Color Emoji");
+    unicode-range: U+1F000-1F644, U+203C-3299;
+}
+
+//同HTB正文字体
+@font-face {
+    font-family: neue-haas-unica;
+    src: url("/fonts/neue-haas-unica.woff2") format("woff2");
+}
+
+// @font-face {
+//     font-family: "LXGW WenKai Screen";
+//     src: url("/fonts/LXGWWenKaiScreen.woff2") format("woff2");
+// }
+
+//同HTB代码块字体
+@font-face {
+    font-family: JetBrainsMono-Regular;
+    src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+}
 body {
     color: $global-text-color;
     font-family: $global-font-family;
@@ -7,83 +32,87 @@ body {
     margin: 0;
     text-align: left;
     background-color: $global-background-color;
-  }
+}
 // 移动端响应式的的核心，哈哈，我前端实在是不会，写的很烂
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
     body {
         width: 100vh;
     }
-    .header-content-width{
-      transform: translateY(28.9%);
-      position: relative;
-      z-index: 10;
-      .nav-bar.nav{
-        position: absolute;
-        flex-direction: column;
-        background-color: $header-background-color;
-        margin-top: -30px;
-      }
+    .header-content-width {
+        transform: translateY(28.9%);
+        position: relative;
+        z-index: 10;
+        .nav-bar.nav {
+            position: absolute;
+            flex-direction: column;
+            background-color: $header-background-color;
+            margin-top: -30px;
+        }
     }
-    .categories-list{
-      width: 90% !important;
+    .categories-list {
+        width: 90% !important;
     }
-    .tags-list{
-      width: 90% !important;
+    .tags-list {
+        width: 90% !important;
     }
-    .archives-list{
-      width: 90% !important;
+    .archives-list {
+        width: 90% !important;
     }
-    .friends-list{
-      width: 90% !important;
+    .friends-list {
+        width: 90% !important;
     }
-    .about-list{
-      width: 90% !important;
+    .about-list {
+        width: 90% !important;
     }
-    .main-grid{
-      grid-template-columns:none !important;
+    .main-grid {
+        grid-template-columns: none !important;
     }
 }
-  
-  header {
+
+.author-name{
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Emoji,Helvetica,Arial,sans-serif !important;
+}
+
+header {
     border-bottom: 1px solid #222;
     margin-bottom: 1rem;
-  }
-  
-  footer {
+}
+
+footer {
     border-top: 1px solid #222;
     margin-top: 1rem;
-  }
-  
-  /* 整个滚动条 */
-  // 隐藏滚动条
-  // ::-webkit-scrollbar {
-  //   display: none;
-  // }
+}
+
+/* 整个滚动条 */
+// 隐藏滚动条
+// ::-webkit-scrollbar {
+//   display: none;
+// }
 ::-webkit-scrollbar {
-  width: 8px; /* 垂直滚动条的宽度 */
-  height: 8px; /* 水平滚动条的高度 */
-  }  /* 滚动条轨道 */
+    width: 8px; /* 垂直滚动条的宽度 */
+    height: 8px; /* 水平滚动条的高度 */
+} /* 滚动条轨道 */
 ::-webkit-scrollbar-track {
-  background: $global-background-color; /* 轨道背景色 */
+    background: $global-background-color; /* 轨道背景色 */
 }
 
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-  background: #4A4E55; /* 滑块背景色 */
+    background: #4a4e55; /* 滑块背景色 */
 }
-::-webkit-scrollbar-button{
-  display: none;
+::-webkit-scrollbar-button {
+    display: none;
 }
-::-webkit-scrollbar-corner{
-  background: $global-background-color;
+::-webkit-scrollbar-corner {
+    background: $global-background-color;
 }
 
 // 火狐和IE浏览器的滚动条样式
 html {
-  scrollbar-width: thin; /* 可选值：auto | thin | none */
-  scrollbar-color: #4A4E55 $global-background-color; /* 滑块颜色 轨道颜色 */
+    scrollbar-width: thin; /* 可选值：auto | thin | none */
+    scrollbar-color: #4a4e55 $global-background-color; /* 滑块颜色 轨道颜色 */
 }
-.main-content{
-  position: relative;
-  padding-bottom: 80px;
+.main-content {
+    position: relative;
+    padding-bottom: 80px;
 }
