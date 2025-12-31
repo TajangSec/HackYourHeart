@@ -1,5 +1,9 @@
 {{- /* 统计文章数 */}}
-{{- $totalPosts := len .Site.RegularPages -}}
+{{- /* 之前采用len Site.RegularPages 统计，多计算出三篇，这里已修复*/}}
+{{- /* 1. 先筛选出 posts 分区下的页面 */ -}}
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- /* 2. 统计数量 */ -}}
+{{- $totalPosts := len $posts -}}
 
 {{- /* 统计总字数 */}}
 {{- $totalWords := 0 -}}
