@@ -1,4 +1,4 @@
-baseURL = 'https://h4cker.zip/'
+baseURL = 'https://demo.h4cker.zip/'
 languageCode = 'en'
 title = 'Tajang·暗陬'
 theme = "HackYourHeart"
@@ -24,7 +24,7 @@ enableEmoji = true
     titleDelimiter="|"
 
     siteCreationDate = "2020-12-26T16:01:46.000Z"  # 设置建站日期
-    
+
     [params.author]
         name = "Tajang"
         email = "Tajang@qq.com"
@@ -81,7 +81,7 @@ enableEmoji = true
     [params.mermaid]
         theme="dark"
 
-        
+
     readingSpeed = 150 # 阅读速度（字/分钟）
 
 # 设置文章链接格式
@@ -90,7 +90,7 @@ enableEmoji = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-  
+
 [module]
   [module.hugoVersion]
     extended = false
@@ -128,7 +128,7 @@ enableEmoji = true
     [markup.goldmark]
         [markup.goldmark.renderer]
         unsafe = true  # 允许渲染未转义的 HTML 标签
-        
+
     [markup.highlight]
         anchorLineNos = true #将每个行号渲染为HTML锚元素
         codeFences = true
