@@ -92,7 +92,21 @@ goat、UML、Pie、git等等
 
 ## Installation
 
-正常安装就行。最好站点配置文件为准
+直接在themes文件夹内git clone本项目，然后在根目录的hugo.toml里写入：
+
+```toml
+theme = "HackYourHeart"
+```
+
+然后返回根目录，运行：
+
+```toml
+hugo --gc --minify
+# 渲染完，再运行
+hugo server
+```
+
+即可查看你的网站，当然，你会发现代码块没有行号，Copy键没有用之类，这是由于相关配置写在了`themes/HackYourHeart/hugo.toml`中，你需要把这个文件内的配置完全复制到项目根目录下的`hugo.toml`，然后自己对相关配置修改即可。
 
 > 由于我许多内容都是从本地引用，所以需要额外加入字体等元素，你改成cdn引用就不用引入字体
 
