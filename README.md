@@ -1,8 +1,10 @@
 # Hack Your Heart
 
-<center>[中文](#chinese) | [English](#english)</center>
+<p align="center">
+[中文](#chinese) | [English](#english)
 
-<center>[预览 / Preview](#yulan)</center>
+[预览 / Preview](#yulan)
+</p>
 
 ## <a name="chinese"></a>中文
 
