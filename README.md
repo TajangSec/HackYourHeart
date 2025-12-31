@@ -1,13 +1,14 @@
 # Hack Your Heart
 
-
-<p align="center">
-<a href="#chinese">中文</a>
+<p align="center" style="font-size:2rem">
+<a href="#chinese">🀄中文</a>
 |
-<a href="#english">English</a>
+<a href="#english">🅰️English</a>
 <br />
-<a href="#yulan">预览 / Preview</a>
+    <br />
+<a href="#yulan">🖼️预览 / Preview</a>
 </p>
+
 
 
 ## <a name="chinese"></a>中文
