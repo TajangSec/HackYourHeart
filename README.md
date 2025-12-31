@@ -3,12 +3,30 @@
 > 主题于2025年1月中旬开发，于2月完成。在2025/12/31公开，之前一直是个人在使用。
 >
 > QQ群：732044065
+>
+> 
+>
+> English: 
+>
+> The theme was developed in mid-January 2025 and completed in February. It was made public on 2025-12-31 and had been used exclusively by the individual developer prior to that date.
+>
+> QQ Group: 732044065
 
 写这个主题是因为我在Hugo的主题仓库里没有找到喜欢的主题。
 
-因为我是一个~~黑客~~脚本小子，我想要更有黑客风格的博客，但是没找到。于是想要自己写一个博客主题。
+因为我是一个 ~~黑客~~ 脚本小子，我想要更有黑客风格的博客，但是没找到。于是想要自己写一个博客主题。
 
 由于我不会前端，写这个主题十分困难，许多HTML、CSS、JS、F12花哨调试 工具都是我现学的。这个主题也是我边学边写。
+
+
+
+English:
+
+I’m writing about this topic because I couldn’t find a Hugo theme I really liked in the official Hugo theme repository.
+
+As a wannabe ~~hacker~~ script kiddie, I was looking for a blog theme with a more “hacker” vibe, but nothing quite fit my needs—so I decided to roll my own and write a custom blog theme from scratch.
+
+Since I have no prior experience with front-end development, building this theme was no small feat. I had to learn HTML, CSS, JavaScript, and advanced debugging techniques like those available via browser developer tools (e.g., F12) on the fly. In fact, I built this theme while simultaneously teaching myself these technologies.
 
 ## 特色
 
@@ -51,14 +69,6 @@ Hugo没有心目中的黑客主题，相近的大概是：[https://hackingcapita
 ### 标签/Tags：
 
 ![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.webp)
-
-这里你可以选择要不要和首页一样花哨的颜色（目前已取消彩色）：
-
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags2.webp)
-
-或者数目那里保持对比颜色
-
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags3.webp)
 
 ### 存档/Archives：
 
