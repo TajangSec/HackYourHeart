@@ -1,20 +1,28 @@
-name = 'HackYourHeart'
-license = 'MIT'
-licenselink = 'https://github.com/TajangSec/HackYourHeart/blob/main/LICENSE'
-description = 'Hack your heart OvO! A HackTheBox-style theme.'
+name = "HackYourHeart"
+license = "MIT"
+licenselink = "https://github.com/TajangSec/HackYourHeart/blob/main/LICENSE"
+description = "Hack your heart OvO! A HackTheBox-style theme."
 
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/TajangSec/HackYourHeart'
+homepage = "https://github.com/TajangSec/HackYourHeart"
 
 # If you have a running demo of the theme
-demosite = 'https://demo.h4cker.zip/'
+demosite = "https://demo.h4cker.zip/"
 
 # Taxonomy terms
-tags = ['blog', 'Hacker', 'Dark']
-features = ['HackTheBox', 'Hacker', 'Technology','Geek','Card']
+tags = [
+  "blog", 
+  "hacker", 
+  "dark", 
+  "technology", 
+  "geek", 
+  "card", 
+  "ctf"
+  ]
+features = ["HackTheBox", "Hacker", "Technology", "Geek", "Card"]
 
 
 # If the theme has a single author
 [author]
-  name = 'Tajang'
-  homepage = 'https://h4cker.zip/'
+name = "Tajang"
+homepage = "https://h4cker.zip/"

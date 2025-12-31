@@ -1,11 +1,11 @@
 +++
-title= "怪物猎人世界Mod制作 替换模型和音效"
+title= "怪物猎人世界Mod制作——替换模型、音效"
 date= "2023-10-22T14:15:52+08:00"
 lastmod = ""
 draft = false
 tags = [ "Mod", "怪物猎人世界"]
 categories = "游戏Mod制作"
-slug = "a015ce"
+slug = "7703af"
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodcover.webp"
 
 +++
