@@ -19,7 +19,7 @@
 
 > 主题于2025年1月中旬开发，于2月完成。在2025/12/31公开，之前一直是个人在使用。
 >
-> QQ群：732044065
+> 
 >
 
 写这个主题是因为我在Hugo的主题仓库里没有找到喜欢的主题。
@@ -233,7 +233,7 @@ enableEmoji = true
 
 > The theme was developed in mid-January 2025 and completed in February. It was made public on 2025-12-31 and had been used exclusively by the individual developer prior to that date.
 >
-> QQ Group: 732044065
+> 
 
 I’m writing about this topic because I couldn’t find a Hugo theme I really liked in the official Hugo theme repository.
 
@@ -442,35 +442,7 @@ enableEmoji = true
 
 ## <a name="yulan"></a>预览/Preview
 
-没什么特色，都是一些基础功能，你能在其他主题看到相同功能。
 
-许多细节真的非常难搞。搜索功能我很满意，它快速美观。代码块部分结合 Chrome 自定义效果，目录自己写的，各种公式、javascript 其中各种冲突，搞得累死我了。
-
-尤其是代码块的表格显示，行号冲突，锚点冲突，又没有复制按钮。其中魔改了一个js，其中许多搞笑的bug，不过都解决了。
-
-i18n还没搞
-
-虽然页面布局有所借鉴，但都是我自己写的代码，代码非常烂，好在性能还行。我尽量加上了懒加载和Hugo自身的资源引用语法。性能够我自己用了。
-
-首页参考Hack The Box Academy中Dashboard的 [Modules](https://academy.hackthebox.com/modules) 页面，色系同HTB：
-
-**HackTheBox Modules Page**
-
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/HTB_Modules.webp)
-
-Hugo没有心目中的黑客主题，相近的大概是：[https://hackingcapitalism.io/](https://hackingcapitalism.io/)（二开自[hello-friend](https://github.com/panr/hugo-theme-hello-friend) ），新的hello-friend-ng也不太行
-
-其实 [phithon](https://www.leavesongs.com/)、[y4tacker](https://y4tacker.github.io/)，风格都不错，他们那个暗黑主题不喜欢。白色的推荐 [ol4three](https://www.ol4three.com/) 和 [X1r0z](https://exp10it.io/) 
-
-由于我之前使用的 hexo-theme-aurora 有大量封面图，也舍不得扔掉那么多封面。
-
-其次是 [3gstudent](https://3gstudent.github.io/) 的，非常不错，但是感觉差了点什么，类似的最好的就是 [ficurinia](https://gitlab.com/gabmus/hugo-ficurinia)，真的漂亮，但我都看那么多了，不如自己搞
-
-主题参考了Fixit、ficurinia等等的实现思路
-
-很早以前我就喜欢HTB风格，漫画图标，酷的配色。黑客浸入感极强。比国内一些CTF、靶场好太多了。国内许多靶场就喜欢搞个普通烂大街的蓝色科技感驾驶舱大屏
-
-现在不是很懂前端，大学学的三剑客貌似没啥用，于是边学边写
 
 ### 主页/Home：
 

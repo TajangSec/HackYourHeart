@@ -1,6 +1,6 @@
 baseURL = 'https://demo.h4cker.zip/'
 languageCode = 'en'
-title = 'Tajang·暗陬'
+title = 'HackYourHeart Blog'
 theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
@@ -17,7 +17,7 @@ enableEmoji = true
     # 站点描述会显示在SEO
     description="CyberSecurity,WebSecurity,Zero Day,RedTeam,Pentesting,Bug Bounty"
     # 显示在头像下面的座右铭
-    motto="临渊羡鱼，不如退而结网"
+    motto="Talk is cheap. Show me the code."
     # 页脚的版权起始年份
     since="2020"
     # 标签页的分隔符
@@ -36,13 +36,13 @@ enableEmoji = true
     # 需要添加的社交链接就自己找svg图标，然后写，不需要的就注释掉，预置了几十种图标
     # 顺序也在这里
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
-        github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
+        github = {url="#",icon="svgs/github.svg"}
         # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="https://space.bilibili.com/434014419",icon="svgs/bilibili.svg"}
+        bilibili = {url="#",icon="svgs/bilibili.svg"}
         # youtube = {url="",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
         # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="https://blog.csdn.net/qq_45619909?type=blog",icon="svgs/csdn.svg"}
+        csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}

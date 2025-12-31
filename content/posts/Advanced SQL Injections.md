@@ -10,8 +10,7 @@ cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/Adva
 
 +++
 
-> 选自https://academy.hackthebox.com/module/details/188
->
+
 
 ### Module Summary
 
@@ -84,4 +83,4 @@ The module is classified as "hard" and assumes an intermediate knowledge of how 
 
 ### Relevant Paths
 
-This module progresses you towards the following [Paths](https://academy.hackthebox.com/paths)
+This module progresses you towards the following Paths
