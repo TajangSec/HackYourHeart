@@ -51,7 +51,9 @@
 
 {{/*  加载bootstrap，如果后续single.html添加了header，那么这些可以删掉，header包含了bootstrap和fuse搜索  */}}
 {{ $styles := resources.Get "lib/bootstrap/bootstrap.min.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+
+{{/* 修复bug，.Permalink导致生成绝对路径，自动拼接baseurl，使本地预览和vercel均无法加载样式*/}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
 {{ $js := resources.Get "lib/bootstrap/bootstrap.bundle.min.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ $js := resources.Get "lib/bootstrap/popper.min.js" | minify | fingerprint }}
