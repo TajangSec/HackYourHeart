@@ -4,7 +4,7 @@ date = 2025-02-04T15:00:00+08:00
 lastmod = ""
 draft = false
 tags = [ "Tier III", "Hard", "Offensive","2 days"]
-categories = "Module"
+categories = "HTB"
 slug = "bfff24"
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/AdvancedSQLi.webp"
 

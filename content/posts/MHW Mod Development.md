@@ -4,7 +4,7 @@ date= "2023-10-22T14:15:52+08:00"
 lastmod = ""
 draft = false
 tags = [ "Mod", "MHW"]
-categories = "Game Mod development"
+categories = "Game"
 slug = "7703af"
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodcover.webp"
 

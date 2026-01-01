@@ -1,77 +1,11 @@
 [[friend]]
     name = "Tajang"
-    bio = "临渊羡鱼，不如退而结网"
+    bio = "The author of this theme"
     url = "https://h4cker.zip/"
     avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/Tajang.webp"
 
 [[friend]]
     name = "Hugo"
-    bio = "世界上最快建立网站的框架"
+    bio = "The world's fastest framework for building websites."
     url = "https://gohugo.io/"
     avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhugoicon.webp"
-
-[[friend]]
-    name = "Hexo Aurora Theme"
-    bio = "打破你对hexo/hugo网页的印象"
-    url = "https://tridiamond.tech/"
-    avatar = "https://res.cloudinary.com/tridiamond/image/upload/v1625037705/ObsidianestLogo-hex_hecqbw.png"
-
-[[friend]]
-    name = "Python"
-    bio = "最好的Demo语言"
-    url = "https://www.python.org/"
-    avatar = "https://www.python.org/static/img/python-logo-large.c36dccadd999.png"
-
-[[friend]]
-    name = "Rust"
-    bio = "后起之秀，邪教"
-    url = "https://www.rust-lang.org/"
-    avatar = "https://www.rust-lang.org/static/images/rust-logo-blk.svg"
-
-[[friend]]
-    name = "Jvav"
-    bio = "伟大，无需多言！"
-    url = "https://jvav.henryladder.com/about/"
-    avatar = "https://jvav.henryladder.com/ga/images/jvavlogo-81x162.png"
-
-[[friend]]
-    name = "Minecraft"
-    bio = "被窝里玩mc导致我近视"
-    url = "https://www.minecraft.net/"
-    avatar = "https://www.minecraft.net/content/dam/minecraftnet/franchise/logos/minecraft-creeper-face.jpg"
-
-[[friend]]
-    name = "英雄联盟"
-    bio = "青春！"
-    url = "https://lol.qq.com/"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhlol.webp"
-
-[[friend]]
-    name = "CS:GO"
-    bio = "最好的FPS游戏"
-    url = "https://www.counter-strike.net/"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcsgo.webp"
-
-[[friend]]
-    name = "Apex Legends"
-    bio = "EA, Fuck you!"
-    url = "https://www.ea.com/games/apex-legends"
-    avatar = "https://media.contentapi.ea.com/content/dam/apex-legends/common/logos/apex-copyright-sigil-white.png"
-
-[[friend]]
-    name = "MHW"
-    bio = "玩太刀的苍蓝星！"
-    url = "https://www.monsterhunter.com/world/cn/"
-    avatar = "https://www.monsterhunter.com/world/images/top/title.png"
-
-[[friend]]
-    name = "战地1"
-    bio = "最具沉浸感的战争游戏"
-    url = "https://www.ea.com/zh-hant/games/battlefield/battlefield-1"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhbf1.webp"
-
-[[friend]]
-    name = "黑神话：悟空"
-    bio = "直面天命！"
-    url = "https://www.heishenhua.com/"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhbmw.webp"

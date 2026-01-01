@@ -12,34 +12,24 @@ url = "/about/"
 
 ## Who am I
 
-欢迎来到我的博客, 我是 Tajang
+Welcome to my theme—I’m Tajang.
 
 
 ---------------------------------
 
-## 能力
+## Something
 
-1. CTF炸鱼级选手
-2. 渗透测试大师
-3. 代码审计专家
-4. 安全开发大佬
-5. 密码学导师
-6. 精通Go、Python、PHP、Java、C、C++等语言
-7. 精通整个内网
-8. 精通免杀
-9. 精通ARM、x86下的逆向，精通安卓逆向
-10. 精通车联网渗透测试
-11. 精通Web安全
-12. 精通病毒分析
-13. 精通各类应急响应
-14. 可以自己完成大型企业内网渗透测试
-15. 可以自己手写EDR、SIP
-16. 可以自己手写类Docker容器
-17. 可以自己手写Web漏洞扫描器
-18. 深入研究过PHP底层C语言的源代码
-19. 深入研究过Linux底层原理
-20. 对AI、机器学习、深度学习的模型建立、训练数据集、测试数据集、 监督算法、无监督算法及整个算法流程有较深入的理解
+I’m a script kiddie who likes to write articles in my spare time.
 
----
+Hugo boasts exceptional performance, but I couldn’t find a theme I really liked on theme directories, so I decided to roll up my sleeves and build one myself in my free time.
 
-编不下去了，事已至此，先吃饭吧
+Development of the theme began in mid-January 2025 and was completed in February 2025. I’ve been using it exclusively for personal purposes ever since, and I made it publicly available on December 31, 2025.
+
+Since I’ve been using this theme solely for personal needs, many of the strings are in Chinese, and it hasn’t been fully internationalized. However, with a few straightforward modifications to the source code, you can easily adapt all strings to your preferred language.
+
+I hope you’ll enjoy this theme!
+
+Demo Site：https://demo.h4cker.zip
+
+My Blog Site：https://h4cker.zip
+
