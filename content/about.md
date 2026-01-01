@@ -29,7 +29,7 @@ Since I’ve been using this theme solely for personal needs, many of the string
 
 I hope you’ll enjoy this theme!
 
-Demo Site：https://demo.h4cker.zip
+Demo Site：[https://demo.h4cker.zip](https://demo.h4cker.zip)
 
-My Blog Site：https://h4cker.zip
+My Blog Site：[https://h4cker.zip](https://h4cker.zip)
 
