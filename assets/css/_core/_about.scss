@@ -4,7 +4,10 @@
     padding: 1rem;
     // background-color: #23334A;
     border-radius: $big-radius;
-    
+    a{
+        text-decoration: none;
+        color: $header-hover-color;
+    }
 }
 figure{
     img{
