@@ -1,0 +1,59 @@
+- id: "powered_a"
+  translation: "由"
+
+- id: "powered_b"
+  translation: "强力驱动"
+
+- id: "current_theme"
+  translation: "当前主题："
+
+- id: "penned_a"
+  translation: "由"
+
+- id: "penned_b"
+  translation: "创作"
+
+- id: "running_time"
+  translation: "网站已高危运行："
+
+- id: "day"
+  translation: "天"
+
+- id: "hour"
+  translation: "小时"
+
+- id: "minute"
+  translation: "分钟"
+
+- id: "second"
+  translation: "秒"
+
+- id: "visit_times_a"
+  translation: "本站总访问量："
+
+- id: "visit_times_b"
+  translation: " 次"
+
+- id: "all"
+  translation: "全部"
+
+- id: "word"
+  translation: "文字"
+
+- id: "post"
+  translation: "文章"
+
+- id: "category"
+  translation: "分类"
+
+- id: "tag"
+  translation: "标签"
+
+- id: "recent_post"
+  translation: "最近文章"
+
+- id: "no_category"
+  translation: "暂无分类"
+
+- id: "1_minute"
+  translation: "1分钟内"

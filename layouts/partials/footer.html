@@ -1,52 +1,65 @@
 <div class="container-fluid">
     <div class="footer-column">
         <div class="site-info">
-            <span>由 <a href="https://gohugo.io/" target="_blank">Hugo</a> 强力驱动</span>
-            <span>当前主题：<a href="https://h4cker.zip/post/4c2e74/">HackYourHeart</a></span>
-            <span>&copy;
-                {{ if (and .Site.Params.since (lt .Site.Params.since now.Year)) }}{{ .Site.Params.since }} - {{ end -}}
-                {{ now.Year }} {{ with .Site.Params.author.name }}{{ . }}.{{ end }}All rights reserved.</span>
+            <span>{{ i18n "powered_a"}}
+                <a href="https://gohugo.io/" target="_blank">Hugo</a>
+                {{ i18n "powered_b"}}</span>
+            <span>{{ i18n "current_theme"}}<a href="https://h4cker.zip/post/4c2e74/">HackYourHeart</a></span>
+            <span>&copy; {{ if (and .Site.Params.since (lt .Site.Params.since
+                now.Year)) }}{{ .Site.Params.since }} - {{ end -}} {{ now.Year
+                }} {{ with .Site.Params.author.name }}{{ . }}.{{ end }}All
+                rights reserved.</span>
 
-            <span>Powered by &nbsp;
-                <a href="https://www.hackthebox.com" target="_blank">
-                    <img class="mb-0" src="/header-logo.svg" alt="log-htb" height="20px"></a></span>
+            <span>{{ i18n "penned_a"}} &nbsp;
+                <a href="https://h4cker.zip/" target="_blank">
+                    <img class="mb-0" src="/header-logo.svg" alt="log-htb" height="20px" /></a>{{ i18n
+                "penned_b"}}</span>
         </div>
         <div class="site-info2">
-            {{/*  显示建站时间  */}}
-            {{ $siteCreationDate := time .Site.Params.siteCreationDate }}
+            {{/* 显示建站时间 */}} {{ $siteCreationDate := time
+            .Site.Params.siteCreationDate }}
             <div class="site-age">
-                网站已高危运行：<span class="site-age-display"></span>
+                {{ i18n "running_time"}}<span class="site-age-display"></span>
             </div>
             <script>
                 // 从 Hugo 模板中传递建站日期
                 const siteCreationDate = new Date("{{ $siteCreationDate }}");
-            
+
                 // 实时更新运行时间
                 function updateSiteAge() {
                     const now = new Date();
                     const diffInMilliseconds = now - siteCreationDate;
-            
-                    const days = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((diffInMilliseconds % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((diffInMilliseconds % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((diffInMilliseconds % (1000 * 60)) / 1000);
-            
-                    const ageString = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
-                    document.querySelector('.site-age-display').textContent = ageString;
+
+                    const days = Math.floor(
+                        diffInMilliseconds / (1000 * 60 * 60 * 24),
+                    );
+                    const hours = Math.floor(
+                        (diffInMilliseconds % (1000 * 60 * 60 * 24)) /
+                        (1000 * 60 * 60),
+                    );
+                    const minutes = Math.floor(
+                        (diffInMilliseconds % (1000 * 60 * 60)) / (1000 * 60),
+                    );
+                    const seconds = Math.floor(
+                        (diffInMilliseconds % (1000 * 60)) / 1000,
+                    );
+
+                    const ageString = `${days} {{ i18n "day"}} ${hours} {{ i18n "hour"}} ${minutes} {{ i18n "minute"}} ${seconds} {{ i18n "second"}}`;
+                    document.querySelector(".site-age-display").textContent =
+                        ageString;
                 }
-            
+
                 // 每秒更新一次
                 setInterval(updateSiteAge, 1000);
                 updateSiteAge(); // 初始化
             </script>
 
-            {{/*  显示备案信息  */}}
-
-
+            {{/* 显示备案信息 */}}
 
             <div class="busuanzi">
                 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+                <span id="busuanzi_container_site_pv">{{ i18n "visit_times_a"}}<span
+                        id="busuanzi_value_site_pv"></span>{{ i18n "visit_times_b"}}</span>
             </div>
         </div>
     </div>

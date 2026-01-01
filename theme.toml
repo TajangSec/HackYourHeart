@@ -11,15 +11,27 @@ demosite = "https://demo.h4cker.zip/"
 
 # Taxonomy terms
 tags = [
-  "blog", 
-  "hacker", 
-  "dark", 
-  "technology", 
-  "geek", 
-  "card", 
+  "blog",
+  "hacker",
+  "technology",
+  "dark",
+  "geek",
+  "card",
   "ctf"
-  ]
-features = ["HackTheBox", "Hacker", "Technology", "Geek", "Card"]
+]
+features = [
+  "i18n",
+  "Hacker",
+  "Technology",
+  "Geek",
+  "Card",
+  "SEO Optimized",
+  "friends link template",
+  "syntax-highlighting",
+  "cover-image",
+  "favicon",
+  "social links"
+]
 
 
 # If the theme has a single author

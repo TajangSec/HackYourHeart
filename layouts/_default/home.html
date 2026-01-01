@@ -24,7 +24,7 @@
 
             {{- if .Site.Taxonomies.categories -}}
               <div class="btn-group btn-group-toggle mb-2 mr-4">
-                <button class="btn btn-light active" data-filter="all">全部</button>
+                <button class="btn btn-light active" data-filter="all">{{ i18n "all"}}</button>
                 {{- range .Site.Taxonomies.categories -}}
                   <button class="btn btn-light" data-filter="{{ .Page.Title | urlize }}">{{ .Page.Title }}</button>
                 {{- end -}}

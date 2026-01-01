@@ -1,5 +1,5 @@
 <section class="recent">
-    <h4 class="recent-menu-title">最近文章</h4>
+    <h4 class="recent-menu-title">{{ i18n "recent_post"}}</h4>
     {{- $recentPosts := where .Site.RegularPages.ByDate.Reverse "Type" "posts" | first 5 -}}
     {{- if $recentPosts -}}
         {{ range $recentPosts }}
@@ -10,7 +10,7 @@
                 {{- with .Params.categories -}} <!-- 检查是否有分类 -->
                     <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
                 {{- else -}}
-                <p class="recent-category">暂无分类</p>
+                <p class="recent-category">{{ i18n "no_category"}}</p>
                 {{- end -}}
             </p>
         </div>

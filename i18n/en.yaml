@@ -1,0 +1,59 @@
+- id: "powered_a"
+  translation: "Powered by"
+
+- id: "powered_b"
+  translation: ""
+
+- id: "current_theme"
+  translation: "Current Theme: "
+
+- id: "penned_a"
+  translation: "Penned with: "
+
+- id: "penned_b"
+  translation: ""
+
+- id: "running_time"
+  translation: "The website has been running for : "
+
+- id: "day"
+  translation: "days"
+
+- id: "hour"
+  translation: "hours"
+
+- id: "minute"
+  translation: "minutes"
+
+- id: "second"
+  translation: "seconds"
+
+- id: "visit_times_a"
+  translation: "Total site visits: "
+
+- id: "visit_times_b"
+  translation: " times"
+
+- id: "all"
+  translation: "ALL"
+
+- id: "word"
+  translation: "Words"
+
+- id: "post"
+  translation: "Posts"
+
+- id: "category"
+  translation: "Categories"
+
+- id: "tag"
+  translation: "Tags"
+
+- id: "recent_post"
+  translation: "Recent Posts"
+
+- id: "no_category"
+  translation: "No category available"
+
+- id: "1_minute"
+  translation: "Within 1 minute"

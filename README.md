@@ -44,7 +44,7 @@ hugo --gc --minify
 hugo server
 ```
 
-即可查看你的网站，当然，你会发现代码块没有行号，Copy键无效之类，这是由于相关配置必须写在根目录的hugo.toml里。我已将配置写在了`themes/HackYourHeart/hugo.toml`中，你需要把这个文件内的配置完全复制到项目根目录下的`hugo.toml`，然后自己对相关配置修改即可。
+即可查看你的网站，当然，你会发现代码块没有行号，Copy键无效之类，这是由于相关配置必须写在根目录的hugo.toml里。我已将配置写在了`themes/HackYourHeart/hugo.toml`中，你需要把这个文件内的配置完全复制到项目根目录下的`hugo.toml`，然后自己对相关配置修改即可。修改`defaultContentLanguage`为`zh`或`en`可设置主题语言，目前仅支持这两种语言。
 
 > 由于我许多内容都是从本地引用，所以需要额外加入字体等元素，你改成cdn引用就不用引入字体
 
@@ -68,25 +68,32 @@ hugo server
 
 ```toml
 baseURL = 'https://demo.h4cker.zip/'
-languageCode = 'en'
-title = 'Tajang·暗陬'
+title = 'HackYourHeart Blog'
 theme = "HackYourHeart"
-# 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章默认不渲染的，所以我这里设置了时区。
+# 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
-
-defaultContentLanguage = "zh"
+# 此代码用于设置主题部分文字的语言，用于本地化，i18n
+defaultContentLanguage = "en"
+# 此代码塞到网页元数据中，告诉搜索引擎网站的语言是什么。metadata
+languageCode = 'en'
 enableEmoji = true
+
+
 [languages]
-  [languages.zh]
-    lang = "zh"
-    languageName = "中文"
-    weight = 1
+    [languages.zh]
+        lang = "zh"
+        languageName = "中文"
+        weight = 1
+    [languages.en]
+        lang = "en"
+        languageName = "English"
+        weight = 2
 
 [params]
     # 站点描述会显示在SEO
     description="CyberSecurity,WebSecurity,Zero Day,RedTeam,Pentesting,Bug Bounty"
     # 显示在头像下面的座右铭
-    motto="临渊羡鱼，不如退而结网"
+    motto="Talk is cheap. Show me the code."
     # 页脚的版权起始年份
     since="2020"
     # 标签页的分隔符
@@ -107,11 +114,11 @@ enableEmoji = true
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
         # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="https://space.bilibili.com/434014419",icon="svgs/bilibili.svg"}
+        bilibili = {url="#",icon="svgs/bilibili.svg"}
         # youtube = {url="",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
         # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="https://blog.csdn.net/qq_45619909?type=blog",icon="svgs/csdn.svg"}
+        csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
@@ -259,7 +266,7 @@ hugo --gc --minify
 hugo server
 ```
 
-You can then view your website. However, you’ll notice that the code blocks lack line numbers and the Copy button is disabled. This is because the relevant configuration must be specified in the `hugo.toml` file in the root directory. I’ve already configured this in `themes/HackYourHeart/hugo.toml`. You need to copy the entire configuration block from that file into the `hugo.toml` file in your project’s root directory, then customize the relevant settings as needed.
+You can then view your website. However, you’ll notice that the code blocks lack line numbers and the Copy button is disabled. This is because the relevant configuration must be specified in the `hugo.toml` file in the root directory. I’ve already configured this in `themes/HackYourHeart/hugo.toml`. You need to copy the entire configuration block from that file into the `hugo.toml` file in your project’s root directory, then customize the relevant settings as needed. Setting `defaultContentLanguage` to `zh` or `en` configures the theme’s language; currently, only these two languages are supported.
 
 > Since much of my content is referenced locally, I need to explicitly include additional assets like fonts. If you switch to CDN-based references, you won’t need to bundle the fonts separately.
 
@@ -283,25 +290,32 @@ Please bear with the Chinese comments.
 
 ```toml
 baseURL = 'https://demo.h4cker.zip/'
-languageCode = 'en'
-title = 'Tajang·暗陬'
+title = 'HackYourHeart Blog'
 theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
-
-defaultContentLanguage = "zh"
+# 此代码用于设置主题部分文字的语言，用于本地化，i18n
+defaultContentLanguage = "en"
+# 此代码塞到网页元数据中，告诉搜索引擎网站的语言是什么。metadata
+languageCode = 'en'
 enableEmoji = true
+
+
 [languages]
-  [languages.zh]
-    lang = "zh"
-    languageName = "中文"
-    weight = 1
+    [languages.zh]
+        lang = "zh"
+        languageName = "中文"
+        weight = 1
+    [languages.en]
+        lang = "en"
+        languageName = "English"
+        weight = 2
 
 [params]
     # 站点描述会显示在SEO
     description="CyberSecurity,WebSecurity,Zero Day,RedTeam,Pentesting,Bug Bounty"
     # 显示在头像下面的座右铭
-    motto="临渊羡鱼，不如退而结网"
+    motto="Talk is cheap. Show me the code."
     # 页脚的版权起始年份
     since="2020"
     # 标签页的分隔符
@@ -322,11 +336,11 @@ enableEmoji = true
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
         # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="https://space.bilibili.com/434014419",icon="svgs/bilibili.svg"}
+        bilibili = {url="#",icon="svgs/bilibili.svg"}
         # youtube = {url="",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
         # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="https://blog.csdn.net/qq_45619909?type=blog",icon="svgs/csdn.svg"}
+        csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
