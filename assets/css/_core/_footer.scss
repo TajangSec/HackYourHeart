@@ -7,6 +7,10 @@ footer{
     a{
         text-decoration: none;
         color: $header-hover-color;
+        // 控制页脚里面blog图片垂直居中
+        img {
+            vertical-align: sub;
+        }
     }
     // 控制页脚在底部，需要main-content是relative，并且有padding-bottom为页脚高度
     position: absolute;
