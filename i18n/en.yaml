@@ -57,3 +57,6 @@
 
 - id: "1_minute"
   translation: "Within 1 minute"
+
+- id: "update_remind"
+  translation: "This post was last updated on"

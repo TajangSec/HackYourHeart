@@ -57,3 +57,6 @@
 
 - id: "1_minute"
   translation: "1分钟内"
+
+- id: "update_remind"
+  translation: "本文最后更新于"
