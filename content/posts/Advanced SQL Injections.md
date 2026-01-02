@@ -1,7 +1,7 @@
 +++
 title = "Advanced SQL Injections"
 date = 2025-02-04T15:00:00+08:00
-lastmod = ""
+lastmod = "2025-05-04T15:00:00+08:00"
 draft = false
 tags = [ "Tier III", "Hard", "Offensive","2 days"]
 categories = "HTB"

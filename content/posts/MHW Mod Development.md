@@ -1,7 +1,7 @@
 +++
 title= "MHW Mod Development"
 date= "2023-10-22T14:15:52+08:00"
-lastmod = ""
+lastmod = "2023-11-22T14:15:52+08:00"
 draft = false
 tags = [ "Mod", "MHW"]
 categories = "Game"
@@ -17,4 +17,3 @@ Then, on October 16, 2023, Capcom—damn them—suddenly released a small update
 As of now, the game is on version `v15.20`, and as of the time this article was written, the vast majority of existing mods are still incompatible with this version. On platforms like Nexus Mods, many mod entries still list update dates from 2020. That said, some mod authors have already begun updating their mods in response to the latest patch, and there’s at least one positive development: the authors of the prerequisite files have already pushed updates to address the issues introduced by the patch. 
 
 One notable bug introduced by this update is that, after enabling the HD Texture Pack DLC, the icons for certain monsters disappear. According to reports on Reddit, Capcom appears to have removed the relevant asset files, leaving these icons missing. Why on earth would you remove icon assets just because you’re adding Steam Deck support and expanding language options? Given the nature of this bug, it’s almost certain that Capcom will release another update in the near future to fix it. While this isn’t an ideal time to dive into modding tutorials, it doesn’t pose a significant barrier for beginners who want to document their progress. Another key reason to write this up now is that I’ve been playing the game less frequently lately, and my desktop and download folders have become a chaotic mess of mod files. It’s high time I clean things up to keep track of the mods I’ve created—and to help other newcomers to the modding scene avoid getting overwhelmed by the sheer volume of available mods.
-

@@ -1,7 +1,7 @@
 +++
 title = "Resistant Automotive Miniature Network"
 date = 2025-01-03T15:02:00+08:00
-lastmod = ""
+lastmod = "2026-01-02T15:02:00+08:00"
 draft = false
 tags = [ "ECU", "Automotive","Emulator"]
 categories = "ICVSEC"
