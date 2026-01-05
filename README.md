@@ -111,6 +111,7 @@ enableEmoji = true
     [params.social]
     # 需要添加的社交链接就自己找svg图标，然后写，不需要的就注释掉，预置了几十种图标
     # 顺序也在这里
+        _merge = "none"
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
         # steam = {url="",icon="svgs/steam.svg"}
@@ -333,6 +334,7 @@ enableEmoji = true
     [params.social]
     # 需要添加的社交链接就自己找svg图标，然后写，不需要的就注释掉，预置了几十种图标
     # 顺序也在这里
+        _merge = "none"
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
         # steam = {url="",icon="svgs/steam.svg"}
