@@ -75,7 +75,7 @@
 
 {{- /* 将自定义scss、目标路径等内容加入到$options */ -}}
 {{- $options := dict "Source" "css/style.scss" "Fingerprint" $fingerprint -}}
-{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" true -}}
+{{- $toCSS := dict "targetPath" "css/style.min.css" "enableSourceMap" false -}}
 {{- $options = dict "Context" . "ToCSS" $toCSS | merge $options -}}
 {{/*  将$options传入plugin/style.html，这个文件是编译并导入样式的  */}}
 {{- partial "plugin/style.html" $options -}}
