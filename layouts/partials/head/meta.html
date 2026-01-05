@@ -4,6 +4,7 @@
 {{/*  作者与站点描述  */}}
 <meta name="author" content="{{ $author.name }}">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage | and .Summary }}{{ .Summary | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+<meta name="SiteName" content="{{ .Site.Title }}">
 
 {{/*  根据页面的关键词（Keywords）、标签（tags）或站点配置中的关键词（site.Params.keywords）动态生成关键词列表  */}}
 {{- $keywords := .Keywords -}}
