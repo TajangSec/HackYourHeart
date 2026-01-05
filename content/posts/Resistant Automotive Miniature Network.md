@@ -6,6 +6,7 @@ draft = false
 tags = [ "ECU", "Automotive","Emulator"]
 categories = "ICVSEC"
 slug = "a67bb2"
+weight = 1
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/demosite_ramn.webp"
 
 +++

@@ -32,6 +32,11 @@
     {{- range $pages -}}
     <div class="col-xl-4 col-md-6 fcard" data-category="{{ .Params.categories | urlize }}" data-tags="{{ delimit (apply .Params.tags "urlize" ".") " " }}">
         <div class="card">
+          {{/* 设置weight属性的话，加入推荐图标 */}}
+          {{- if .Params.weight -}}
+            {{ partial "pin.html" . }}
+          {{- end -}}
+
           {{/* 文章封面 */}}
           {{/*  当没有设置封面或封面图片加载错误时，使用默认封面  */}}
           <div class="card-cover">

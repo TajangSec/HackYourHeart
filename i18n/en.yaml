@@ -69,3 +69,6 @@
 
 - id: "gotop"
   translation: "Go Top"
+
+- id: "pin"
+  translation: "HOT"

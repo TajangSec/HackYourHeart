@@ -69,3 +69,6 @@
 
 - id: "gotop"
   translation: "回到顶部"
+
+- id: "pin"
+  translation: "推荐"
