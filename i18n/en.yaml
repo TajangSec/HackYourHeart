@@ -55,7 +55,7 @@
 - id: "no_category"
   translation: "No category available"
 
-- id: "1_minute"
+- id: "within_1_minute"
   translation: "Within 1 minute"
 
 - id: "update_remind"

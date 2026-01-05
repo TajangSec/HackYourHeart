@@ -55,7 +55,7 @@
 - id: "no_category"
   translation: "暂无分类"
 
-- id: "1_minute"
+- id: "within_1_minute"
   translation: "1分钟内"
 
 - id: "update_remind"

@@ -58,9 +58,9 @@
                 {{- if lt $readingTime 1 -}}
                 
                     {{- with .Params.categories -}} <!-- 检查是否有分类 -->
-                        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | {{ i18n "1_minute"}}</span>
+                        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{- . -}}</a><span> | {{ i18n "within_1_minute"}}</span>
                     {{- else -}}
-                        {{ i18n "no_category"}}<span> | {{ i18n "1_minute"}}</span>
+                        {{ i18n "no_category"}}<span> | {{ i18n "within_1_minute"}}</span>
                     {{- end -}}
                 {{- else -}}
                     {{- with .Params.categories -}} <!-- 检查是否有分类 -->
