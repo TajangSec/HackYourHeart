@@ -160,7 +160,7 @@
     background-color: #141d2b;
 }
 .gohome:hover::after {
-    content: "主页"; /* 显示的文字 */
+    content: attr(data-text);/* 显示的文字 */
     position: absolute;
     top: -2rem;
     left: 28%;
@@ -169,7 +169,7 @@
     white-space: nowrap; /* 防止文字换行 */
 }
 .goback:hover::after {
-    content: "返回"; /* 显示的文字 */
+    content: attr(data-text); /* 显示的文字 */
     position: absolute;
     left: 50%;
     top: -2rem;
@@ -178,7 +178,7 @@
     white-space: nowrap; /* 防止文字换行 */
 }
 .gotop:hover::after {
-    content: "回到顶部"; /* 显示的文字 */
+    content: attr(data-text); /* 显示的文字 */
     position: absolute;
     top: -2rem;
     left: 65%;

@@ -168,13 +168,13 @@
           {{/*  主页与返回  */}}
           <div class="menu">
             <ul>
-              <li><a class="gohome" href="/">
+              <li><a class="gohome" href="/" data-text='{{ i18n "gohome" }}'>
                 {{ $svg := resources.Get "svgs/home.svg" }}{{ $svg.Content | safeHTML }}
               </a></li>
-              <li><a class="goback" href="javascript:history.back(-1)">
+              <li><a class="goback" href="javascript:history.back(-1)" data-text='{{ i18n "goback" }}'>
                 {{ $svg := resources.Get "svgs/back-arrow.svg" }}{{ $svg.Content | safeHTML }}
               </a></li>
-              <li><a class="gotop" href="#">
+              <li><a class="gotop" href="#" data-text='{{ i18n "gotop" }}'>
                 {{ $svg := resources.Get "svgs/backtop.svg" }}{{ $svg.Content | safeHTML }}
               </a></li>
             </ul>

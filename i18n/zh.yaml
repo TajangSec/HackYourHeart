@@ -60,3 +60,12 @@
 
 - id: "update_remind"
   translation: "本文最后更新于"
+
+- id: "gohome"
+  translation: "主页"
+
+- id: "goback"
+  translation: "返回"
+
+- id: "gotop"
+  translation: "回到顶部"

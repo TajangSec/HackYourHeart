@@ -60,3 +60,12 @@
 
 - id: "update_remind"
   translation: "This post was last updated on"
+
+- id: "gohome"
+  translation: "Go Home"
+
+- id: "goback"
+  translation: "Back"
+
+- id: "gotop"
+  translation: "Go Top"
