@@ -31,6 +31,7 @@ enableEmoji = true
     titleDelimiter="|"
 
     siteCreationDate = "2020-12-26T16:01:46.000Z"  # 设置建站日期
+    fancybox=true
 
     [params.author]
         name = "Tajang"
@@ -45,23 +46,23 @@ enableEmoji = true
         _merge = "none"
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
-        # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="#",icon="svgs/bilibili.svg"}
-        # youtube = {url="",icon="svgs/youtube.svg"}
+        steam = {url="#",icon="svgs/steam.svg"}
+        # bilibili = {url="#",icon="svgs/bilibili.svg"}
+        youtube = {url="#",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
-        # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="#",icon="svgs/csdn.svg"}
+        # heybox = {url="#",icon="svgs/heybox.svg"}
+        # csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
         # flag = {url="",icon="svgs/flag.svg"}
         # gitlab = {url="",icon="svgs/gitlab.svg"}
-        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mail.svg"}
+        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mailto.svg"}
         # neteasemusic = {url="",icon="svgs/neteasemusic.svg"}
         # qqzone = {url="",icon="svgs/qqzone.svg"}
         # spotify = {url="",icon="svgs/spotify.svg"}
         # telegram = {url="",icon="svgs/telegram.svg"}
-        # tiktok_douyin = {url="",icon="svgs/tiktok_douyin.svg"}
+        tiktok_douyin = {url="#",icon="svgs/tiktok_douyin.svg"}
         # twitch = {url="",icon="svgs/twitch.svg"}
         # twitter = {url="",icon="svgs/twitter.svg"}
         # wechat = {url="",icon="svgs/wechat.svg"}

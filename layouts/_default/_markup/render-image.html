@@ -1,0 +1,7 @@
+{{if .Page.Site.Params.fancybox }}
+<div class="post-img-view">
+
+<img src="{{ .Destination | safeURL }}" data-fancybox="gallery" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+
+</div>
+{{ end }}

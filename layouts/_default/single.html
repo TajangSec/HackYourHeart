@@ -76,6 +76,21 @@
     <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 
+{{/*  灯箱  */}}
+{{ if .Site.Params.fancybox }}
+{{ $styles := resources.Get "lib/fancybox/fancybox.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+{{ $js := resources.Get "lib/fancybox/fancybox.umd.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+<script>
+Fancybox.bind("[data-fancybox]", {
+  // Your custom options
+});
+</script>
+{{ $js := resources.Get "lib/fancybox/addfancybox.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}
+
   {{/*  封面图作为背景  */}}
   <div class="post-cover-div">
     {{ $defaultCover := resources.Get "default-cover.webp" | fingerprint }}
