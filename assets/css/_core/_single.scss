@@ -159,6 +159,13 @@
     border-radius: $big-radius;
     background-color: #141d2b;
 }
+.post-html img{
+    display: block;
+    margin: 0 auto;
+}
+.post-html img + img{
+    margin-top: 2rem;
+}
 .gohome:hover::after {
     content: attr(data-text);/* 显示的文字 */
     position: absolute;
