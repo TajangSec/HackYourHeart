@@ -15,7 +15,7 @@ cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/demo
 
 ## What is RAMN ?
 
-![fscsvsv](/img/ramn_1.webp)
+<img src="/img/ramn_1.webp" style="zoom:33%;" />
 
 RAMN (Resistant Automotive Miniature Network) is a credit-card size ECU testbed for safely studying and researching automotive systems.
 
