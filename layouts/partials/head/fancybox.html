@@ -1,0 +1,31 @@
+<!-- 判断逻辑：
+   1. 检查是否有 pdf 短代码
+   2. 使用正则检查 .Content 中是否有 <img 标签
+   注意：由于 Hugo 渲染代码块时会将 < 转义为 &lt;，
+   所以直接匹配 "<img" 是不会匹配到代码块内部内容的。 -->
+
+{{- $hasImg := findRE `<img` .Content -}}
+{{- $hasPDF := .HasShortcode "pdf" -}}
+{{/*  灯箱  */}}
+{{- if and .Site.Params.fancybox (or $hasImg $hasPDF) -}}
+
+    {{ $styles := resources.Get "lib/fancybox/fancybox.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
+
+    {{ $js := resources.Get "lib/fancybox/fancybox.umd.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+
+    {{- $add := resources.Get "lib/fancybox/addfancybox.js" | minify | fingerprint -}}
+    <script src="{{ $add.RelPermalink }}" integrity="{{ $add.Data.Integrity }}" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof Fancybox !== "undefined") {
+            Fancybox.bind("[data-fancybox]", {
+                // 这里可以添加全局配置
+            });
+            }
+        });
+    </script>
+
+{{ end }}

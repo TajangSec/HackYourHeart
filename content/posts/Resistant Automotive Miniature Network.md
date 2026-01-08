@@ -1,12 +1,11 @@
 +++
 title = "Resistant Automotive Miniature Network"
-date = 2025-01-03T15:02:00+08:00
+date = "2025-10-03T15:02:00+08:00"
 lastmod = "2026-01-02T15:02:00+08:00"
 draft = false
 tags = [ "ECU", "Automotive","Emulator"]
 categories = "ICVSEC"
-slug = "a67bb2"
-weight = 1
+slug = "b3f2e3"
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/demosite_ramn.webp"
 
 +++
@@ -15,7 +14,7 @@ cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/demo
 
 ## What is RAMN ?
 
-<img src="/img/ramn_1.webp" style="zoom:33%;" />
+<img src="/test/img/ramn_1.webp" style="zoom:33%;" />
 
 RAMN (Resistant Automotive Miniature Network) is a credit-card size ECU testbed for safely studying and researching automotive systems.
 
@@ -27,13 +26,13 @@ RAMN is a set of PCBs (Printed Circuit Boards) that can be used together to simu
 
 RAMN simulates a CAN/CAN-FD network of 4 ECUs. By default, network traffic specifications only use classic CAN messages, and are identical to those of PASTA.
 
-![](/img/ramn_2.gif)
+![](/test/img/ramn_2.gif)
 
 ### Interactive
 
 RAMN can be expanded with boards using Arduino-style pin headers. You can add sensors and actuators, and physically interact with the ECUs.
 
-![](/img/ramn_3.webp)
+![](/test/img/ramn_3.webp)
 
 ### Plug and Learn
 

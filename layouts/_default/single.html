@@ -66,30 +66,18 @@
 
 
 {{/*  给所有代码块添加copy按钮,见https://github.com/TajangSec/copy-code-button  */}}
-{{ if (findRE "<pre" .Content 1) }}
+{{ if (findRE `<pre` .Content 1) }}
     {{ $js := resources.Get "js/copy-code-button.js" | minify | fingerprint }}
     <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 
-{{ if (findRE "<pre" .Content 1) }}
+{{ if (findRE `<pre` .Content 1) }}
     {{ $js := resources.Get "js/fold.js" | minify | fingerprint }}
     <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 
-{{/*  灯箱  */}}
-{{ if .Site.Params.fancybox }}
-{{ $styles := resources.Get "lib/fancybox/fancybox.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous">
-{{ $js := resources.Get "lib/fancybox/fancybox.umd.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<script>
-Fancybox.bind("[data-fancybox]", {
-  // Your custom options
-});
-</script>
-{{ $js := resources.Get "lib/fancybox/addfancybox.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ end }}
+{{/* 灯箱 */}}
+{{ partial "head/fancybox.html" . }}
 
   {{/*  封面图作为背景  */}}
   <div class="post-cover-div">

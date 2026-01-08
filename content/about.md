@@ -32,4 +32,3 @@ I hope you enjoy this theme!
 Demo Site：[https://demo.h4cker.zip](https://demo.h4cker.zip)
 
 My Blog Site：[https://h4cker.zip](https://h4cker.zip)
-

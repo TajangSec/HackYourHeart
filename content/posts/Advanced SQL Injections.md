@@ -1,11 +1,11 @@
 +++
 title = "Advanced SQL Injections"
-date = 2025-02-04T15:00:00+08:00
+date = "2022-02-04T15:00:00+08:00"
 lastmod = "2025-05-04T15:00:00+08:00"
 draft = false
 tags = [ "Tier III", "Hard", "Offensive","2 days"]
 categories = "HTB"
-slug = "bfff24"
+slug = "27d7df"
 cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/AdvancedSQLi.webp"
 
 +++

@@ -16,13 +16,13 @@ I’m absolutely obsessed with “Monster Hunter: World.” After the Iceborne e
 
 **Image rendering and Fancybox testing:**
 
-<img src="/img/bingzhou.webp" style="zoom:50%;" />
+<img src="/test/img/bingzhou.webp" style="zoom:50%;" />
 
 Then, on October 16, 2023, Capcom—damn them—suddenly released a small update, clocking in at just 90 MB. The update primarily added Steam Deck support and included Spanish language localization for Latin America. While seemingly minor, this update caused the version number to increment and altered the offsets of certain game files, rendering many previously stable mods incompatible. In essence, it dealt a blow to the mod community comparable to the Iceborne update, which wiped out most of the existing mod ecosystem for the base game. This time around, however, the impact was somewhat more targeted: only mods that rely on specific prerequisite files or anti-cheat mechanisms were broken, while injection-based mods largely remained functional. Simple mods that merely replace models or audio files continued to work without issue.
 
 **Image rendering and Fancybox testing:**
 
-<img src="/img/Dodogama.webp" style="zoom:50%;" />
+<img src="/test/img/Dodogama.webp" style="zoom:50%;" />
 
 As of now, the game is on version `v15.20`, and as of the time this article was written, the vast majority of existing mods are still incompatible with this version. On platforms like Nexus Mods, many mod entries still list update dates from 2020. That said, some mod authors have already begun updating their mods in response to the latest patch, and there’s at least one positive development: the authors of the prerequisite files have already pushed updates to address the issues introduced by the patch. 
 
