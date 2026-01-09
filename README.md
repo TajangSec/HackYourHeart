@@ -68,7 +68,7 @@ hugo server
 
 ```toml
 baseURL = 'https://demo.h4cker.zip/'
-title = 'HackYourHeart Blog'
+title = 'HackYourHeart Demo'
 theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
@@ -100,6 +100,7 @@ enableEmoji = true
     titleDelimiter="|"
 
     siteCreationDate = "2020-12-26T16:01:46.000Z"  # 设置建站日期
+    fancybox=true
 
     [params.author]
         name = "Tajang"
@@ -114,23 +115,23 @@ enableEmoji = true
         _merge = "none"
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
-        # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="#",icon="svgs/bilibili.svg"}
-        # youtube = {url="",icon="svgs/youtube.svg"}
+        steam = {url="#",icon="svgs/steam.svg"}
+        # bilibili = {url="#",icon="svgs/bilibili.svg"}
+        youtube = {url="#",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
-        # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="#",icon="svgs/csdn.svg"}
+        # heybox = {url="#",icon="svgs/heybox.svg"}
+        # csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
         # flag = {url="",icon="svgs/flag.svg"}
         # gitlab = {url="",icon="svgs/gitlab.svg"}
-        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mail.svg"}
+        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mailto.svg"}
         # neteasemusic = {url="",icon="svgs/neteasemusic.svg"}
         # qqzone = {url="",icon="svgs/qqzone.svg"}
         # spotify = {url="",icon="svgs/spotify.svg"}
         # telegram = {url="",icon="svgs/telegram.svg"}
-        # tiktok_douyin = {url="",icon="svgs/tiktok_douyin.svg"}
+        tiktok_douyin = {url="#",icon="svgs/tiktok_douyin.svg"}
         # twitch = {url="",icon="svgs/twitch.svg"}
         # twitter = {url="",icon="svgs/twitter.svg"}
         # wechat = {url="",icon="svgs/wechat.svg"}
@@ -139,6 +140,17 @@ enableEmoji = true
         # zhihu = {url="",icon="svgs/zhihu.svg"}
         # linkedin = { url = "https://linkedin.com/in/yourusername", icon = "svgs/linkedin.svg" }
         # instagram = { url = "https://instagram.com/yourusername", icon = "svgs/instagram.svg" }
+
+        # 用于站长验证网站，比如向 Google 或者 Bing 提交网站时，会让你在meta里写某些验证码，在这里可以快速设置
+    [params.verification]
+        # bing="your-bing-verification-code"
+        # google = "your-google-verification-code"
+        # bing = "your-bing-verification-code"
+        # yandex = "your-yandex-verification-code"
+        # pinterest = "your-pinterest-verification-code"
+        # baidu = "your-baidu-verification-code"
+        # so = "your-360-so-verification-code"
+        # sogou = "your-sogou-verification-code"
 
     [params.app]
         # 可选 应用站点标题覆盖（添加到 iOS 主屏幕或 Android 启动器时）
@@ -291,7 +303,7 @@ Please bear with the Chinese comments.
 
 ```toml
 baseURL = 'https://demo.h4cker.zip/'
-title = 'HackYourHeart Blog'
+title = 'HackYourHeart Demo'
 theme = "HackYourHeart"
 # 很离谱的bug，我把文章放进来，就是不渲染，找不到原因，后来逐一筛选因素，发现时间两天以内不渲染。可是能是时区导致hugo认为这是未来文章，未来文章不渲染的，要开设置
 timeZone = "Asia/Shanghai"
@@ -323,6 +335,7 @@ enableEmoji = true
     titleDelimiter="|"
 
     siteCreationDate = "2020-12-26T16:01:46.000Z"  # 设置建站日期
+    fancybox=true
 
     [params.author]
         name = "Tajang"
@@ -337,23 +350,23 @@ enableEmoji = true
         _merge = "none"
         # pornhub = { url = "https://pornhub.com/model/username",icon = "svgs/pornhub.svg"}
         github = {url="https://github.com/TajangSec",icon="svgs/github.svg"}
-        # steam = {url="",icon="svgs/steam.svg"}
-        bilibili = {url="#",icon="svgs/bilibili.svg"}
-        # youtube = {url="",icon="svgs/youtube.svg"}
+        steam = {url="#",icon="svgs/steam.svg"}
+        # bilibili = {url="#",icon="svgs/bilibili.svg"}
+        youtube = {url="#",icon="svgs/youtube.svg"}
         # baidutieba = {url="",icon="svgs/baidutieba.svg"}
-        # heybox = {url="",icon="svgs/heybox .svg"}
-        csdn = {url="#",icon="svgs/csdn.svg"}
+        # heybox = {url="#",icon="svgs/heybox.svg"}
+        # csdn = {url="#",icon="svgs/csdn.svg"}
         rss = {url="/index.xml",icon="svgs/rss.svg"}
         # dingtalk = {url="",icon="svgs/dingtalk.svg"}
         # facebook = {url="",icon="svgs/facebook.svg"}
         # flag = {url="",icon="svgs/flag.svg"}
         # gitlab = {url="",icon="svgs/gitlab.svg"}
-        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mail.svg"}
+        # mail = {url="mailto:Tajang@qq.com",icon="svgs/mailto.svg"}
         # neteasemusic = {url="",icon="svgs/neteasemusic.svg"}
         # qqzone = {url="",icon="svgs/qqzone.svg"}
         # spotify = {url="",icon="svgs/spotify.svg"}
         # telegram = {url="",icon="svgs/telegram.svg"}
-        # tiktok_douyin = {url="",icon="svgs/tiktok_douyin.svg"}
+        tiktok_douyin = {url="#",icon="svgs/tiktok_douyin.svg"}
         # twitch = {url="",icon="svgs/twitch.svg"}
         # twitter = {url="",icon="svgs/twitter.svg"}
         # wechat = {url="",icon="svgs/wechat.svg"}
@@ -362,6 +375,17 @@ enableEmoji = true
         # zhihu = {url="",icon="svgs/zhihu.svg"}
         # linkedin = { url = "https://linkedin.com/in/yourusername", icon = "svgs/linkedin.svg" }
         # instagram = { url = "https://instagram.com/yourusername", icon = "svgs/instagram.svg" }
+
+        # 用于站长验证网站，比如向 Google 或者 Bing 提交网站时，会让你在meta里写某些验证码，在这里可以快速设置
+    [params.verification]
+        # bing="your-bing-verification-code"
+        # google = "your-google-verification-code"
+        # bing = "your-bing-verification-code"
+        # yandex = "your-yandex-verification-code"
+        # pinterest = "your-pinterest-verification-code"
+        # baidu = "your-baidu-verification-code"
+        # so = "your-360-so-verification-code"
+        # sogou = "your-sogou-verification-code"
 
     [params.app]
         # 可选 应用站点标题覆盖（添加到 iOS 主屏幕或 Android 启动器时）
