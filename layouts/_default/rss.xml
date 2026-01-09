@@ -65,7 +65,7 @@
       <author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}{{- with $authorName }}
       <dc:creator>{{ . }}</dc:creator>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Content | transform.XMLEscape | safeHTML }}</description>
+      <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
       {{ if isset .Params "tags" -}}
           {{ range $index, $name := sort .Params.tags -}}
           <category>{{ $name }}</category>
