@@ -78,7 +78,8 @@ defaultContentLanguage = "en"
 languageCode = 'en'
 enableEmoji = true
 
-
+# 多语言模块，当你开启后会新建对应的语言路径，例如/en,/zh之类，具体多语种文章请参考官方文档
+# 只有一种语言时，另一种语言路径里全是空白，如果你觉得这样不优雅，那可以注释相应语言块。
 [languages]
     [languages.zh]
         lang = "zh"
@@ -313,7 +314,8 @@ defaultContentLanguage = "en"
 languageCode = 'en'
 enableEmoji = true
 
-
+# 多语言模块，当你开启后会新建对应的语言路径，例如/en,/zh之类，具体多语种文章请参考官方文档
+# 只有一种语言时，另一种语言路径里全是空白，如果你觉得这样不优雅，那可以注释相应语言块。
 [languages]
     [languages.zh]
         lang = "zh"
