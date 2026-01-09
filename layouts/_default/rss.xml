@@ -34,9 +34,9 @@
 {{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
 {{- $pages := slice }}
 {{- if or $.IsHome $.IsSection }}
-{{- $pages = $pctx.RegularPages }}
+  {{- $pages = where $pctx.RegularPages "Type" "not in" (slice "page" "json")}}
 {{- else }}
-{{- $pages = $pctx.Pages }}
+  {{- $pages = $pctx.Pages }}
 {{- end }}
 {{- $limit := .Site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
@@ -65,7 +65,7 @@
       <author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}{{- with $authorName }}
       <dc:creator>{{ . }}</dc:creator>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
+      <description>{{ .Plain | truncate 150 | transform.XMLEscape | safeHTML }}&lt;br/&gt;&lt;br/&gt;&lt;a href="{{ .Permalink }}"&gt;{{ i18n "read_more"}}&lt;/a&gt;</description>
       {{ if isset .Params "tags" -}}
           {{ range $index, $name := sort .Params.tags -}}
           <category>{{ $name }}</category>

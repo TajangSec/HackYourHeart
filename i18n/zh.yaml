@@ -72,3 +72,6 @@
 
 - id: "pin"
   translation: "推荐"
+
+- id: "read_more"
+  translation: "阅读原文⚡"

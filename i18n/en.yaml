@@ -72,3 +72,6 @@
 
 - id: "pin"
   translation: "HOT"
+
+- id: "read_more"
+  translation: "Read More⚡"
