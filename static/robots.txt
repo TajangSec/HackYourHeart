@@ -7,3 +7,4 @@ Disallow: /*.jpg$
 Disallow: /*.svg$
 Disallow: /*.webp$
 Disallow: /*.gif$
+Disallow: /*.pdf$
