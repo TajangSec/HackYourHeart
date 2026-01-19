@@ -73,11 +73,6 @@ body {
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Emoji,Helvetica,Arial,sans-serif !important;
 }
 
-header {
-    border-bottom: 1px solid #222;
-    margin-bottom: 1rem;
-}
-
 footer {
     border-top: 1px solid #222;
     margin-top: 1rem;
@@ -108,5 +103,10 @@ footer {
 .main-content {
     position: relative;
     padding-bottom: 80px;
-    min-height: 100vh; //确保文章过短时，页脚保持在最下面。
+    min-height: calc(100vh - #{$header-height} - #{$header-margin-bottom}); //确保左侧最近文章过少时，页脚仍然位于最下方。
+    &.post-main-content{
+        min-height: 100vh; //确保文章过短时，页脚保持在最下面。
+    }
 }
+
+

@@ -4,7 +4,9 @@ header{
     font-size: $header-title-font-size;
     background-color: $header-background-color;
     line-height: $header-text-height;
-    padding: 0 2rem;;
+    padding: 0 2rem;
+    border-bottom: 1px solid #222;
+    margin-bottom: $header-margin-bottom;
 }
 .navbar-header{
     display: flex;

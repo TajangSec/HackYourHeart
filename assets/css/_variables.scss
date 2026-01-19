@@ -33,7 +33,8 @@ $big-radius: 7px;
 // 页眉行高
 $header-text-height: 1.5rem !important;
 //页眉高度
-$header-height: 60px !important;
+$header-height: 60px;
+$header-margin-bottom: 1rem;
 
 // 页眉字体和大小
 $header-title-font-family:
