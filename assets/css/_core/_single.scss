@@ -469,6 +469,9 @@ nav#TableOfContents ul li a {
 
 /* 目录高亮状态 */
 nav#TableOfContents ul li a.active-toc {
-    color: $header-hover-color;
+    display: inline-block;
+    color: #9fef00 !important;
     font-weight: 600 !important;
+    border-left: 4px solid #6a6af6;
+    padding-left: .3rem;
 }
