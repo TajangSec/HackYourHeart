@@ -3,8 +3,9 @@
 (function (root, smoothScroll) {
   'use strict';
 
+  // --- 这里的变量你可以自由调节 ---
   var SCROLL_CONFIG = {
-      duration: 360, // 统一控制点击跳转、回到顶部、后退的速度 (ms),Smooth speed
+      duration: 350, // 统一控制点击跳转、回到顶部、后退的速度 (ms)，Smooth speed
   };
 
   if ('scrollRestoration' in history) {
@@ -26,6 +27,14 @@ if (typeof window !== 'object') return;
 
 if(document.querySelectorAll === void 0 || window.pageYOffset === void 0 || history.pushState === void 0) { return; }
 
+// 核心修复：解码中文锚点
+var getElementByHash = function(hash) {
+    if (!hash) return null;
+    // 去掉开头的 #，并进行 URL 解码
+    var id = decodeURIComponent(hash.substring(1));
+    return document.getElementById(id);
+};
+
 var getTop = function(element, start) {
     if(element.nodeName === 'HTML') return -start
     return element.getBoundingClientRect().top + start
@@ -39,7 +48,6 @@ var position = function(start, end, elapsed, duration) {
 }
 
 var smoothScroll = function(el, duration, callback, context){
-    // 使用全局变量作为默认值
     duration = duration || SCROLL_CONFIG.duration;
     context = context || window;
     var start = context.scrollTop || window.pageYOffset;
@@ -77,16 +85,16 @@ var smoothScroll = function(el, duration, callback, context){
 
 var linkHandler = function(ev) {
     if (!ev.defaultPrevented) {
-        ev.preventDefault();
-
-        if (location.hash !== this.hash) window.history.pushState(null, null, this.hash)
-        
-        var node = document.getElementById(this.hash.substring(1))
+        // 只有当目标元素存在时才拦截默认行为
+        var node = getElementByHash(this.hash);
         if (!node) return; 
 
+        ev.preventDefault();
+
+        if (location.hash !== this.hash) window.history.pushState(null, null, this.hash);
         
         smoothScroll(node, SCROLL_CONFIG.duration, function (el) {
-            location.replace('#' + el.id)
+            location.replace('#' + el.id);
         });
     }
 }
@@ -101,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (goTopBtn) {
         goTopBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            
             smoothScroll(0, SCROLL_CONFIG.duration);
         });
     }
@@ -109,16 +116,14 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('popstate', function (event) {
         var hash = location.hash;
         if (hash) {
-            var node = document.getElementById(hash.substring(1));
+            var node = getElementByHash(hash);
             if (node) {
                 setTimeout(function() {
-                    
                     smoothScroll(node, SCROLL_CONFIG.duration); 
                 }, 10);
             }
         } else {
             setTimeout(function() {
-                
                 smoothScroll(0, SCROLL_CONFIG.duration);
             }, 10);
         }
