@@ -120,8 +120,7 @@
     max-height: 80vh;
     overflow-y: auto;
     bottom: initial;
-    position: sticky; /* 或者 fixed */
-    scroll-behavior: smooth;
+    position: sticky;
     ul {
         list-style-type: none; /* 去除列表项前的符号 */
     }
