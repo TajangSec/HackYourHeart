@@ -4,7 +4,14 @@
             <span>{{ i18n "powered_a"}}
                 <a href="https://gohugo.io/" target="_blank">Hugo</a>
                 {{ i18n "powered_b"}}</span>
-            <span>{{ i18n "current_theme"}}<a href="https://demo.h4cker.zip/">HackYourHeart</a></span>
+            <span>
+                {{ i18n "current_theme" }}
+                {{ if eq .Site.Language.Lang "zh" }}
+                    <a href="https://h4cker.zip/post/c9840f/">HackYourHeart</a>
+                {{ else }}
+                    <a href="https://demo.h4cker.zip/post/6380a9/">HackYourHeart</a>
+                {{ end }}
+            </span>
             <span>&copy; {{ if (and .Site.Params.since (lt .Site.Params.since
                 now.Year)) }}{{ .Site.Params.since }} - {{ end -}} {{ now.Year
                 }} {{ with .Site.Params.author.name }}{{ . }}.{{ end }}All
