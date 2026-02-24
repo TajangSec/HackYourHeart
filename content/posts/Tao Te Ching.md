@@ -7,7 +7,7 @@ draft = false
 tags = [ "Taoist", "Ancient Chinese Philosophy"]
 categories = "Literature"
 slug = "053dcf"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/daodejing20170405.webp"
+cover = "/test/img/daodejing20170405.webp"
 
 +++
 

@@ -6,7 +6,7 @@ draft = false
 tags = [ "Mod", "MHW"]
 categories = "Game"
 slug = "7703af"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/ModMaking/mhwmodcover.webp"
+cover = "/test/img/mhwmodcover.webp"
 
 +++
 

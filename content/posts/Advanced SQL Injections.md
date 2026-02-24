@@ -6,7 +6,7 @@ draft = false
 tags = [ "Tier III", "Hard", "Offensive","2 days"]
 categories = "HTB"
 slug = "27d7df"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/AdvancedSQLi.webp"
+cover = "/test/img/AdvancedSQLi.webp"
 
 +++
 

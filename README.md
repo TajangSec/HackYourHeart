@@ -488,47 +488,47 @@ enableEmoji = true
 
 ### 主页/Home：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhome.webp)
+![](/static/test/img/hyhhome.webp)
 
 ### 分类/Categories：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcategories.webp)
+![](/static/test/img/hyhcategories.webp)
 
 ### 标签/Tags：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhtags.webp)
+![](/static/test/img/hyhtags.webp)
 
 ### 存档/Archives：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyharchives.webp)
+![](/static/test/img/hyharchives.webp)
 
 ### 朋友/Friends：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhfriends.webp)
+![](/static/test/img/hyhfriends.webp)
 
 ### 关于/About：
 
 这里就是markdown直接写
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhabout.webp)
+![](/static/test/img/hyhabout.webp)
 
 
 
 ### 文章/Post page：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhpost.webp)
+![](/static/test/img/hyhpost.webp)
 
 ### 代码块/Codeblock：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhcodeblock.webp)
+![](/static/test/img/hyhcodeblock.webp)
 
 ### 数学公式、注音、emoji/Math、Ruby、Emoji：
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmathruby.webp)
+![](/static/test/img/hyhmathruby.webp)
 
 ### 图像/Graph：
 
 goat、UML、Pie、git等等
 
-![](https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhmermaid.webp)
+![](/static/test/img/hyhmermaid.webp)
 

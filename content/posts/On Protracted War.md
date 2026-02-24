@@ -6,7 +6,7 @@ draft = false
 tags = [  "Modern History"]
 categories = "Military"
 slug = "9a0680"
-cover = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/34%E7%A7%8D%E7%89%88%E6%9C%AC%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98.webp"
+cover = "/test/img/34%E7%A7%8D%E7%89%88%E6%9C%AC%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98.webp"
 
 +++
 # Strategy

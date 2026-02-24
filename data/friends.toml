@@ -2,10 +2,10 @@
     name = "Tajang"
     bio = "The author of this theme"
     url = "https://h4cker.zip/"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/Tajang.webp"
+    avatar = "/test/img/Tajang.webp"
 
 [[friend]]
     name = "Hugo"
     bio = "The world's fastest framework for building websites."
     url = "https://gohugo.io/"
-    avatar = "https://blog-1307674006.cos.ap-shanghai.myqcloud.com/HackYourHeart/hyhhugoicon.webp"
+    avatar = "/test/img/hyhhugoicon.webp"
