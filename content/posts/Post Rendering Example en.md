@@ -293,13 +293,19 @@ Because the Hugo theme demo doesn’t allow external links, there’s no Bilibil
 
 You can specify an external URL or a relative path here, such as /hugo_tutorial.mp4.
 
-{{< video src="https://youtu.be/0RKpf3rK57I?si=IUGkbZFHPHyxyyph" cover="/test/img/hugo_tutorial.png">}}
+{{< video src="https://youtu.be/0RKpf3rK57I?si=IUGkbZFHPHyxyyph" cover="/test/img/hugo_tutorial.webp">}}
 
 ```markdown
-{{</* video src="https://youtu.be/0RKpf3rK57I?si=IUGkbZFHPHyxyyph" cover="/test/img/hugo_tutorial.png"*/>}}
+{{</* video src="https://youtu.be/0RKpf3rK57I?si=IUGkbZFHPHyxyyph" cover="/test/img/hugo_tutorial.webp"*/>}}
 ```
 
+# Post encryption
 
+Encryption is true encryption, not merely obfuscation or pseudo-encryption.
+
+The encryption algorithm is AES-GCM. Decryption invokes the browser’s WebCrypto API for decryption and features built-in hardware acceleration, resulting in extremely fast decryption speeds. It can only run on HTTPS and localhost.
+
+Add the field `password="123456"` to the front-matter of the post, and the article and its table of contents will be encrypted according to the password you enter.
 
 # Other elements
 

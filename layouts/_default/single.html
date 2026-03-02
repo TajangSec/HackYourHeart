@@ -161,11 +161,45 @@
       {{/*这个div是正文加评论  */}}
       <div>
         {{/*  正文  */}}
-        <div class="post-html">
-          {{/*  之前这里我是手动渲染emoji，.Content | emojify | replaceRE···，这样导致代码块里也被渲染，这非常蠢，实际上不需要在这里渲染，站点配置enableEmoji = true即可，这是hugo自带的，而不是主题来完成  */}}
-          {{/*  给a标签添加属性，作用是外部链接新建标签页打开，而内部链接不受影响，rel="noopener noreferrer"属性防止钓鱼攻击  */}}
-          {{ .Content | replaceRE "<a\\s+([^>]*href=\"https?://[^\"]+\"[^>]*)>" "<a $1 target=\"_blank\" rel=\"noopener noreferrer\">" | safeHTML }}
-        </div>
+
+        {{/*  之前这里我是手动渲染emoji，.Content | emojify | replaceRE···，这样导致代码块里也被渲染，这非常蠢，实际上不需要在这里渲染，站点配置enableEmoji = true即可，这是hugo自带的，而不是主题来完成  */}}
+            {{/*  给a标签添加属性，作用是外部链接新建标签页打开，而内部链接不受影响，rel="noopener noreferrer"属性防止钓鱼攻击  */}}
+        {{ $processedContent := .Content | replaceRE "<a\\s+([^>]*href=\"https?://[^\"]+\"[^>]*)>" "<a $1 target=\"_blank\" rel=\"noopener noreferrer\">" | safeHTML }}
+        
+        {{/* 密码判断 */}}
+        {{ if .Params.password }}
+            <div class="post-html" id="encrypted-content" password="{{ .Params.password }}">
+                {{/* 1. 正文内容：这个 div 会被 Python 脚本加密并彻底删除 */}}
+                <div class="content-to-encrypt">
+                    {{ $processedContent | safeHTML }}
+                </div>
+
+                {{/* 2. 解密 UI：放在容器内部，脚本会跳过它 */}}
+                <div id="password-wrapper" style="margin: 40px auto; text-align: center; max-width: 400px;">
+                    <p style="margin-bottom: 20px;">{{ i18n "encryption_notice" }}</p>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="password" id="input-password" placeholder="{{ i18n "input_password" }}" 
+                              style="flex-grow: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <button onclick="decryptPost()" 
+                                style="padding: 8px 20px; background: #333; color: #fff; border: none; border-radius: 4px; cursor: pointer;">
+                            {{ i18n "unlock" }}
+                        </button>
+                    </div>
+                    <p id="err-msg" style="color: #e74c3c; display: none; margin-top: 15px; font-size: 14px;">{{ i18n "password_error" }}</p>
+                </div>
+            </div>
+            
+            {{ partial "decrypt-post.html" . }}
+        {{ else }}
+            <div class="post-html">
+                {{ $processedContent | safeHTML }}
+            </div>
+        {{ end }}
+
+
+
+
+
           {{/*  评论  */}}
         <!-- <div id="comments" data-url="h4cker.zip" clickToLoad="false"></div> -->
           
@@ -191,7 +225,14 @@
           </div>
 
           <div class="toc">
-            {{ .TableOfContents }}
+            {{ if .Params.password }}
+              {{/* 加上这个标记类，Python 脚本会识别并加密它 */}}
+              <div class="toc-to-encrypt">
+                {{ .TableOfContents }}
+              </div>
+            {{ else }}
+              {{ .TableOfContents }}
+            {{ end }}
           </div>
         </div>
       </div>

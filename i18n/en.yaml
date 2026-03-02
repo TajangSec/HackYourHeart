@@ -75,3 +75,15 @@
 
 - id: "read_more"
   translation: "Read More⚡"
+
+- id: "encryption_notice"
+  translation: "🔒 This content is password-protected"
+
+- id: "unlock"
+  translation: "Unlock"
+
+- id: "input_password"
+  translation: "Please enter your password"
+
+- id: "password_error"
+  translation: "⚠️ Incorrect password, please try again."

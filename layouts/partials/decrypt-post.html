@@ -1,0 +1,65 @@
+<script>
+    async function decryptPost() {
+        const password = document.getElementById('input-password').value;
+        const container = document.getElementById('encrypted-content');
+        const errorMsg = document.getElementById('err-msg');
+        
+        // 获取两个密文载荷
+        const contentPayload = container.getAttribute('data-encrypted');
+        const tocPayload = container.getAttribute('data-toc-encrypted');
+
+        if (!contentPayload) return;
+
+        try {
+            // --- 通用 AES-GCM 解密函数 ---
+            async function performDecryption(payload, pwd) {
+                const combined = Uint8Array.from(atob(payload), c => c.charCodeAt(0));
+                const salt = combined.slice(0, 16);
+                const nonce = combined.slice(16, 28);
+                const ciphertext = combined.slice(28);
+
+                const enc = new TextEncoder();
+                const passwordKey = await crypto.subtle.importKey("raw", enc.encode(pwd), "PBKDF2", false, ["deriveKey"]);
+                const key = await crypto.subtle.deriveKey(
+                    { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+                    passwordKey, { name: "AES-GCM", length: 256 }, false, ["decrypt"]
+                );
+
+                const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: nonce }, key, ciphertext);
+                return new TextDecoder().decode(decrypted);
+            }
+
+        // 1. 解密并还原内容
+        const decodedContent = await performDecryption(contentPayload, password);
+        container.insertAdjacentHTML('afterbegin', decodedContent);
+
+        // 2. 还原目录
+        if (tocPayload) {
+            const decodedToc = await performDecryption(tocPayload, password);
+            const tocContainer = document.querySelector('.toc');
+            if (tocContainer) tocContainer.innerHTML = decodedToc;
+        }
+
+        // --- 核心修复：依次重新初始化动态组件 ---
+        
+        // 激活目录高亮
+        if (typeof window.initTocHighlight === 'function') {
+            window.initTocHighlight();
+        }
+
+        // 激活 Fancybox 灯箱
+        if (typeof window.initFancybox === 'function') {
+            window.initFancybox();
+        }
+
+        // 隐藏 UI 并清理
+        document.getElementById('password-wrapper').style.display = 'none';
+        container.removeAttribute('data-encrypted');
+        container.removeAttribute('data-toc-encrypted');
+
+        } catch (e) {
+            console.error("解密失败:", e);
+            errorMsg.style.display = 'block';
+        }
+    }
+</script>

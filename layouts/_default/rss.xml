@@ -65,7 +65,15 @@
       <author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}{{- with $authorName }}
       <dc:creator>{{ . }}</dc:creator>{{ end }}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Plain | truncate 150 | transform.XMLEscape | safeHTML }}&lt;br/&gt;&lt;br/&gt;&lt;a href="{{ .Permalink }}"&gt;{{ i18n "read_more"}}&lt;/a&gt;</description>
+      <description>
+      {{- if .Params.password -}}
+        {{/* 如果有密码，显示受保护提示 */}}
+        {{ i18n "encryption_notice" }}&lt;br/&gt;&lt;br/&gt;&lt;a href="{{ .Permalink }}"&gt;{{ i18n "read_more"}}&lt;/a&gt;
+      {{- else -}}
+        {{/* 否则正常显示摘要和阅读更多 */}}
+        {{ .Plain | truncate 150 | transform.XMLEscape | safeHTML }}&lt;br/&gt;&lt;br/&gt;&lt;a href="{{ .Permalink }}"&gt;{{ i18n "read_more"}}&lt;/a&gt;
+      {{- end -}}
+      </description>
       {{ if isset .Params "tags" -}}
           {{ range $index, $name := sort .Params.tags -}}
           <category>{{ $name }}</category>

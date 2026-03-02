@@ -1,9 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tocContainer = document.querySelector('.main-right .toc-div');
+/* 修改后的 toc-highlight.js */
+window.initTocHighlight = () => {
+    // 重新获取解密后生成的 DOM 元素
     const tocLinks = document.querySelectorAll('nav#TableOfContents a');
     const headers = document.querySelectorAll('main h1, main h2, main h3, main h4');
     
-    // --- 核心变量：点击锁和计时器 ---
+    if (tocLinks.length === 0 || headers.length === 0) return;
+
     let isClickScrolling = false;
     let scrollTimeout;
 
@@ -12,63 +14,48 @@ document.addEventListener('DOMContentLoaded', () => {
         tocLinks.forEach(link => {
             const isActive = link.getAttribute('href') === `#${id}`;
             link.classList.toggle('active-toc', isActive);
-            if (isActive) {
-                link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
         });
     };
 
-    // --- 1. 点击处理：彻底锁定并立即高亮 ---
+    // --- 1. 点击处理 ---
     tocLinks.forEach(link => {
         link.addEventListener('click', () => {
-            isClickScrolling = true; // 上锁
+            isClickScrolling = true;
             const id = link.getAttribute('href').substring(1);
-            highlightTOC(id); // 立即高亮点击项
+            highlightTOC(id);
 
-            // 监听窗口滚动停止
             window.addEventListener('scroll', function handler() {
                 window.clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
-                    isClickScrolling = false; // 只有完全停止滚动后才解锁
+                    isClickScrolling = false;
                     window.removeEventListener('scroll', handler);
-                }, 100); // 100ms 无滚动即视为停止
+                }, 100);
             });
         });
     });
 
     // --- 2. 观察器逻辑 ---
-    const observerOptions = {
-        root: null,
-        rootMargin: '-5% 0px -85% 0px', 
-        threshold: [0, 1.0]
-    };
-
     const observer = new IntersectionObserver(entries => {
-        // 如果是由点击引起的自动滚动，直接无视所有经过的标题
         if (isClickScrolling) return;
-
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 highlightTOC(entry.target.id);
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '-5% 0px -85% 0px', threshold: [0, 1.0] });
 
     headers.forEach(header => observer.observe(header));
 
-    // --- 3. 初始化逻辑 ---
+    // --- 3. 初始化位置检查 ---
     const scrollPosition = window.scrollY;
-    if (scrollPosition < 100) {
-        if (headers.length > 0) highlightTOC(headers[0].id);
-    } else {
-        let currentId = '';
-        for (const header of headers) {
-            if (header.offsetTop <= scrollPosition + 150) {
-                currentId = header.id;
-            } else {
-                break;
-            }
-        }
-        highlightTOC(currentId);
+    let currentId = '';
+    for (const header of headers) {
+        if (header.offsetTop <= scrollPosition + 150) {
+            currentId = header.id;
+        } else { break; }
     }
-});
+    highlightTOC(currentId);
+};
+
+// 页面正常加载时依然尝试初始化（针对未加密文章）
+document.addEventListener('DOMContentLoaded', window.initTocHighlight);
