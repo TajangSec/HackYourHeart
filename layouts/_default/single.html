@@ -18,33 +18,55 @@
 {{/*  物理化学公式需要Katex额外引入一些东西，这里不写了  */}}
 
 
+{{/* layouts/_default/single.html */}}
+
 {{ $style := resources.Get "/lib/katex/katex.min.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 {{ $script := resources.Get "/lib/katex/katex.min.js" | minify | fingerprint }}
 <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+
+{{/* 定义全局初始化函数 */}}
+<script>
+  window.initKatex = function() {
+    if (typeof renderMathInElement === 'function') {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ],
+        throwOnError: false
+      });
+    }
+  };
+</script>
+
 {{ $script := resources.Get "/lib/katex/auto-render.min.js" | minify | fingerprint }}
 <script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"
-  onload="renderMathInElement(document.body, {
-          delimiters: [
-            { left: '$$', right: '$$', display: true },
-            { left: '$', right: '$', display: false }
-          ],
-          throwOnError: false
-        });"></script>
+  onload="window.initKatex()"></script>
 
 
-{{/*  动态加载mermaid，用于渲染代码块的mermaid图像  */}}
-{{ if (findRE `(?s)<div class=\"mermaid\">.*?</div>` .Content 1) }}
+{{/* 动态加载mermaid，用于渲染代码块的mermaid图像 */}}
+{{ if (findRE `(?s)<div class="mermaid">.*?</div>` .Content 1) }}
   {{ $mermaid := resources.Get "js/mermaid.min.js" | minify | fingerprint }}
   <script defer src="{{ $mermaid.RelPermalink }}" integrity="{{ $mermaid.Data.Integrity }}"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      mermaid.initialize({ 
-        startOnLoad: true,
-        //主题与文字居中
-        theme:'{{ if site.Params.mermaid.theme }}{{ site.Params.mermaid.theme }}{{ else }}dark{{ end }}',
-        align:'{{ if site.Params.mermaid.align }}{{ site.Params.mermaid.align }}{{ else }}center{{ end }}',
-      });
+    window.initMermaid = function() {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({ 
+          startOnLoad: false, 
+          // 从 Hugo 配置中读取 theme，如果没有配置则默认为 'default'
+          theme: '{{ .Site.Params.mermaid.theme | default "default" }}' 
+        });
+        
+        // 动态渲染所有 class 为 mermaid 的元素
+        mermaid.init(undefined, ".mermaid");
+      }
+    };
+
+    // 针对普通非加密页面
+    document.addEventListener("DOMContentLoaded", function() {
+      window.initMermaid();
     });
   </script>
 {{ end }}

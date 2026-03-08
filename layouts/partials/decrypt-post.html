@@ -42,15 +42,18 @@
 
         // --- 核心修复：依次重新初始化动态组件 ---
         
-        // 激活目录高亮
-        if (typeof window.initTocHighlight === 'function') {
-            window.initTocHighlight();
+        if (typeof window.initTocHighlight === 'function') window.initTocHighlight();
+        if (typeof window.initCodeFolding === 'function') window.initCodeFolding();
+        if (typeof window.initLazyLoad === 'function')  window.initLazyLoad();
+        if (typeof window.initFancybox === 'function') window.initFancybox();
+        if (typeof window.initMermaid === 'function') window.initMermaid();
+        if (typeof window.initKatex === 'function') window.initKatex();
+        if (typeof window.initCopyButtons === 'function' && navigator.clipboard) {
+            window.initCopyButtons(navigator.clipboard);
         }
+        
 
-        // 激活 Fancybox 灯箱
-        if (typeof window.initFancybox === 'function') {
-            window.initFancybox();
-        }
+        
 
         // 隐藏 UI 并清理
         document.getElementById('password-wrapper').style.display = 'none';

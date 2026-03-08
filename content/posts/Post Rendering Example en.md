@@ -307,6 +307,8 @@ The encryption algorithm is AES-GCM. Decryption invokes the browser’s WebCrypt
 
 Add the field `password="123456"` to the front-matter of the post, and the article and its table of contents will be encrypted according to the password you enter.
 
+![](/test/img/hyhpost_encryption.webp "Image Title")
+
 # Other elements
 
 ## 1、HTML Mixing
